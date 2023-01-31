@@ -1,1 +1,1 @@
-# remix-worshop-codelabs
+# remix-workshop-codelabs
