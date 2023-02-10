@@ -15,17 +15,19 @@ Let's setup you environment.
 
 ### Clone the repository
 
-Run the development server:
-
 ```bash
 git clone https://github.com/jrakotoharisoa/remix-workshop.git
 ```
 
-## Start your app
-
-Run the development server:
+### Install dependencies
 
 ```bash
-cd remix-workshop
+cd remix-workshop-codelab
+npm install
+```
+
+## Start your dev server
+
+```bash
 npm run dev
 ```
