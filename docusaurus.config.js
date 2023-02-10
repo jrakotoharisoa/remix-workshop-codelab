@@ -14,13 +14,13 @@ const config = {
   url: "https://jrakotoharisoa.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/remix-workshop-codelabs",
+  baseUrl: "/remix-workshop-codelab",
   noIndex: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "jrakotoharisoa", // Usually your GitHub org/user name.
-  projectName: "remix-workshop-codelabs", // Usually your repo name.
+  projectName: "remix-workshop-codelab", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
 
@@ -45,7 +45,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/jrakotoharisoa/remix-workshop-codelabs/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/jrakotoharisoa/remix-workshop-codelab/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -71,10 +71,10 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Codelabs",
+            label: "codelab",
           },
           {
-            href: "https://github.com/jrakotoharisoa/remix-workshop-codelabs",
+            href: "https://github.com/jrakotoharisoa/remix-workshop-codelab",
             label: "GitHub",
             position: "right",
           },
