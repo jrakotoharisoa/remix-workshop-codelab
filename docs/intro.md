@@ -17,7 +17,7 @@ Commençons par mettre en place notre environnement.
 💿 Créer votre app
 
 ```bash
-remix create ./my-playlists --template https://github.com/jrakotoharisoa/remix-worksho/tree/template
+npx create-remix@latest ./my-playlists --template https://github.com/jrakotoharisoa/remix-worksho/tree/template
 ```
 
 💿 Installer les dépendances
