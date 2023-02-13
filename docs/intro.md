@@ -9,8 +9,8 @@ Commençons par mettre en place notre environnement.
 ## Pré requis
 
 - [Node.js](https://nodejs.org/en/download/) version (^!4.17.0, or >=16.0.0)
-- [NPM](https://www.npmjs.com/) 7 or greater
-- A code editor ([VSCode](https://code.visualstudio.com/) par exemple)
+- [NPM](https://www.npmjs.com/) 7 ou plus.
+- Un editeur de code ([VSCode](https://code.visualstudio.com/) par exemple)
 
 ## Initialisation du projet
 
