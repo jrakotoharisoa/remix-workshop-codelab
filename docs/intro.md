@@ -4,33 +4,33 @@ sidebar_position: 1
 
 # Intro
 
-Let's setup you environment.
+Commençons par mettre en place notre environnement.
 
-## What you'll need
+## Pré requis
 
 - [Node.js](https://nodejs.org/en/download/) version (^!4.17.0, or >=16.0.0)
 - [NPM](https://www.npmjs.com/) 7 or greater
 - A code editor ([VSCode](https://code.visualstudio.com/) is a nice one)
 
-## Setup project
+## Initialisation du projet
 
-💿 Clone the repository
+💿 Créer votre app
 
 ```bash
-git clone https://github.com/jrakotoharisoa/remix-workshop.git
+remix create ./my-playlists --template https://github.com/jrakotoharisoa/remix-worksho/tree/template
 ```
 
-💿 Install dependencies
+💿 Installer les dépendances
 
 ```bash
-cd remix-workshop-codelab
+cd my-playlists
 npm install
 ```
 
-💿 Start your dev server
+💿 Lancer le serveur de développement
 
 ```bash
 npm run dev
 ```
 
-💿 Open up http://localhost:3000, the app should be running.
+💿 Ouvrir http://localhost:3000 dans votre navigateur.
