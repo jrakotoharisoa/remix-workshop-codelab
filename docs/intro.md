@@ -6,28 +6,31 @@ sidebar_position: 1
 
 Let's setup you environment.
 
-## Getting Started
+## What you'll need
 
-### What you'll need
+- [Node.js](https://nodejs.org/en/download/) version (^!4.17.0, or >=16.0.0)
+- [NPM](https://www.npmjs.com/) 7 or greater
+- A code editor ([VSCode](https://code.visualstudio.com/) is a nice one)
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Setup project
 
-### Clone the repository
+💿 Clone the repository
 
 ```bash
 git clone https://github.com/jrakotoharisoa/remix-workshop.git
 ```
 
-### Install dependencies
+💿 Install dependencies
 
 ```bash
 cd remix-workshop-codelab
 npm install
 ```
 
-## Start your dev server
+💿 Start your dev server
 
 ```bash
 npm run dev
 ```
+
+💿 Open up http://localhost:3000, the app should be running.
