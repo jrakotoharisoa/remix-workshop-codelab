@@ -71,7 +71,7 @@ npm run dev
 
 💿 **Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur**
 
-:::note 🚀 Vous êtes prêt a démarrer !
+:::info 🚀 Vous êtes prêt a démarrer !
 
 Passons à l'étape suivante pour créer la première page de votre application.
 :::
