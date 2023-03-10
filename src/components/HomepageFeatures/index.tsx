@@ -1,55 +1,51 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  pictureUrl: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Johan Rouve",
+    pictureUrl: "https://iili.io/5LEXeV.jpg",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Développeur curieux, j'ai travaillé sur différentes plate-formes,
+        principalement web et mobile, aussi bien coté front que back, dans
+        différents languages. J’ai une forte appétence pour le design et
+        l’ergonomie, et j’aime peaufiner les détails graphiques afin que les
+        utilisateurs aient le meilleur ressenti possible. Et comme la vie ne se
+        limite pas seulement à du code, je me passionne aussi pour le sport et
+        la raclette.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "Johann Rakotoharisoa",
+    pictureUrl: "https://iili.io/HE011F1.jpg",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Développeur web chez Comet Meetings, la startup qui propose de
+        révolutionner l'experience de la réunion et du séminaire. Je suis
+        passionné par tout ce qui permet de proposer la meilleure UX aux
+        utilisateurs finaux. Ainsi que par tous les outils, méthodologie et
+        pratique permettant d’améliorer l’expérience développeur.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, pictureUrl, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div className={clsx("col avatar avatar--vertical")}>
+      <img src={pictureUrl} className="avatar__photo avatar__photo--xl" />
+      <div className="text--center padding-horiz--md avatar__intro">
+        <h3 className="avatar__name">{title}</h3>
+        <p className="avatar__subtitle">{description}</p>
       </div>
     </div>
   );

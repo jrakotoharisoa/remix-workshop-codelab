@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Add a route
+# Ma première page
 
 ## Create your first React Page
 

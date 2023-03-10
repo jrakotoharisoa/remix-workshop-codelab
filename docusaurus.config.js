@@ -7,7 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Remix Workshop",
-  tagline: "Développons un petit outil de gestion de playlist",
+  tagline:
+    "Découvrons Remix au travers du développement d'un petit outil de gestion de playlist",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
