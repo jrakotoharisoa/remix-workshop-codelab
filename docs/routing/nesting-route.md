@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Route imbriqué
+# URL et layout imbriqués
 
 Dans nos applications, nous avons généralement des composants imbriqués à de multiples niveaux de profondeur. Et il est commun d'avoir des segments d'URL qui correspondant à une certaine structure de composants impriqués.
 
@@ -53,5 +53,5 @@ Voir la section [Nested layouts without nested URLs](https://remix.run/docs/en/1
 
 :::info 👏 Vous avez maintement une page qui bénéficie du layout de notre application
 
-Voyons maintenant associé cette page aux différents playlist.
+Voyons comment rendre un segment de l'URL dynamique.
 :::
