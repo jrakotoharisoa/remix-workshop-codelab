@@ -8,7 +8,7 @@ Pour pouvoir afficher des données dynamique sur nos pages, nous allons devoir m
 
 À noter que cette fonction n'est utiliser que côté serveur. Elle ne se retrouvera jamais dans notre code envoyer au navigateur.
 
-:::info Excercie
+:::info Exercice
 Définir un `loader` dans le module route d'une playlist. Afin d'afficher les informations suivants:
 
 - Nom de la playlist
