@@ -32,7 +32,7 @@ export const loader = () => {
 
 Remix appelle notre fonction `loader` avec différent données:
 
-- une `request` objet `Request` de l'`API Fetch` [standard du web]
+- une `request` objet `Request` de l'`API Fetch`
 - les `params` correspondant aux segments dynamiques de l'url
 - un `context` remix
 
@@ -73,16 +73,28 @@ export const loader = async ({ params }: LoaderArgs) => {
 
 💿 **Retourner les données en réponse du loader**
 
+La sortie du `loader` doit correspondre à une réponse de l'`API Fetch`. Pour nous aider Remix met à disposition un helper `json` qui nous permet de retourner un réponse avec des données au format `json`.
+
 ```tsx title="app/routes/_layout.playlists.$id.tsx"
-// highlight-next-line
 export const loader = async ({ params }: LoaderArgs) => {
   const id = params.id;
-  // highlight-next-line
   const playlist = await playlists.find(id || "");
   if (!playlist) {
     throw new Error("playlist not found");
   }
 
+  // highlight-next-line
   return json(playlist);
 };
 ```
+
+:::tip Test
+Pour tester votre API, vous pouvez accéder à la route suivante: [http://localhost:3000/test?\_data](http://localhost:3000/test?_data)
+
+Le query params `_data` permet d'indiquer à Remix que l'on souhaite les données du `loader` et la page associé à la route.
+:::
+
+:::info 👏 Nous venons de définir notre première route d'API.
+
+Voyons comment utiliser lire les données du `loader` dans notre composant.
+:::

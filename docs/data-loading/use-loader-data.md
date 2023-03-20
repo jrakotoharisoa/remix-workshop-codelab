@@ -4,11 +4,13 @@ sidebar_position: 2
 
 # Lecture des données dans le composant
 
-Tandis que la fonction `loader` nous permet de definir le model de donnée pour notre vue, la récuperation de la donnée ce fait grace au hook `useLoaderData()`
+Tandis que la fonction `loader` nous permet lire les données côté back-end. Le hook `useLoaderData()` nous permet d'accéder aux données dans le composant correspondant à la vue.
+
+L'utilisation du hook va permettre d'avoir accès aux données directement pendant la phase de server side rendering mais également lors de navigation front-end, le composant sera capable d'effectuer des appels fetch vers le serveur pour récupérer les données sans avoir à recharger toute la page.
 
 ## Guide
 
-💿 ** Recuperer les données du loader **
+💿 ** Récuperer les données du loader **
 
 Ajouter le code suivant dans votre composant
 
@@ -47,3 +49,8 @@ export default function Playlist() {
   );
 }
 ```
+
+:::info 👏 Nous avons maintenant des pages avec des données dynamiques.
+
+Voyons comment mettre à jours ces données.
+:::
