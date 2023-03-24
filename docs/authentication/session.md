@@ -49,15 +49,15 @@ export const action = async ({ request }: ActionArgs) => {
 };
 
 export default function Layout() {
-  const { username } = useLoaderData<typeof loader>();
+  const { name } = useLoaderData<typeof loader>();
 
   return (
     <div>
-      <div>Je suis {username}</div>
+      <div>Je suis {name}</div>
       <Form method="post">
         <label>
           Qui etes vous ?
-          <input autoComplete="off" name="username" />
+          <input autoComplete="off" name="name" />
         </label>
 
         <button type="submit">Valider</button>
