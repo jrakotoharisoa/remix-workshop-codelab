@@ -4,19 +4,19 @@ sidebar_position: 2
 
 # Connexion
 
-Maintenant que nous savons persister un etat entre differents echanges avec le serveur grace aux sessions, nous pouvons stocker des informations concernant l'authentification d'un utilisateur
+Maintenant que nous savons persister un état entre différents échanges avec le serveur grâce aux sessions, nous pouvons stocker des informations concernant l'authentification d'un utilisateur
 
-:::info Exercice
-1- Connecter un utilisateur
-2- Afficher le status de connexion
-3- Proteger une route
+:::info Exercice  
+1- Connecter un utilisateur  
+2- Afficher le status de connexion  
+3- Protéger une route  
 :::
 
 ## Guide
 
 💿 ** Connecter un utilisateur **
 
-Quand le mot de passe est correct, utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine (query param `from`) ou la page principale du site.
+Quand le mot de passe est correct, utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
 
 ```tsx title="app/routes/_layout.login.tsx"
 import { ActionArgs, json, redirect } from "@remix-run/node";
@@ -71,7 +71,7 @@ export default function Login() {
 
 💿 ** Afficher le status de connexion **
 
-Modifier votre loader pour recuperer l'etat de connexion de l'utilisateur
+Modifier votre loader pour récupérer l'état de connexion de l'utilisateur
 
 ```tsx title="app/routes/_layout.tsx"
 export default function Layout() {
@@ -86,7 +86,9 @@ export default function Layout() {
             <span>Remix</span>
           </p>
           // highlight-next-line
-          <p className="flex items-center space-x-2">status: {isLogged ? "connecté" : "deconnecté"}</p>
+          <p className="flex items-center space-x-2">
+            status: {isLogged ? "connecté" : "deconnecté"}
+          </p>
         </div>
         ...
       </aside>

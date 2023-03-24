@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # Session
 
-Dans un monde sans JS, il est souvent necessaire de garder un etat entre plusieurs requetes de la meme personne. Remix utilise les cookies pour partager cet etat entre le client et le serveur.
+Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités, est d'utiliser les cookies. Et pour cela Remix met à dispotion un petit helper `createCookieSessionStorage`.
 
 :::info Exercice
-1- Faire transiter de la donnée entre plusieurs requetes grace à une session
+1-Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
 :::
 
 ## Guide
@@ -17,17 +17,18 @@ Dans un monde sans JS, il est souvent necessaire de garder un etat entre plusieu
 ```tsx title="app/utils/user-session.server.ts"
 import { createCookieSessionStorage } from "@remix-run/node";
 
-const { getSession, commitSession, destroySession } = createCookieSessionStorage({
-  cookie: {
-    name: "__devoxx-remix",
-    httpOnly: true,
-    maxAge: 60,
-    path: "/",
-    sameSite: "lax",
-    secrets: ["jx!bnVNNqJ%4q2&8W6FoMOh!YeBGf&t#swtf&p#ORC"],
-    secure: true,
-  },
-});
+const { getSession, commitSession, destroySession } =
+  createCookieSessionStorage({
+    cookie: {
+      name: "__devoxx-remix",
+      httpOnly: true,
+      maxAge: 60,
+      path: "/",
+      sameSite: "lax",
+      secrets: ["jx!bnVNNqJ%4q2&8W6FoMOh!YeBGf&t#swtf&p#ORC"],
+      secure: true,
+    },
+  });
 
 export { getSession, commitSession, destroySession };
 ```

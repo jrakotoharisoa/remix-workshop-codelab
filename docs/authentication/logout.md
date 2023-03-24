@@ -4,10 +4,10 @@ sidebar_position: 3
 
 # Deconnexion
 
-Votre utilisateur est connecté mais il faut aussi lui offrir la possibilité de se deconnecter.
+Votre utilisateur est connecté mais il faut aussi lui offrir la possibilité de se déconnecter.
 
 :::info Exercice
-1- Supprimer la session
+1- Supprimer la session au clique sur le bouton déconnexion
 :::
 
 ## Guide
