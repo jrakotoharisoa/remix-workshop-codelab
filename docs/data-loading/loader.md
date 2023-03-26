@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Récupération des données
 
-Pour pouvoir afficher des données dynamique sur nos pages, nous allons devoir charger ces données. C'est le rôle de la fonction `loader` exportée dans un module route.
+Pour pouvoir afficher des données dynamiques sur nos pages, nous allons devoir charger ces données. C'est le rôle de la fonction `loader` exportée dans un module route.
 
 À noter que cette fonction n'est utilisée que côté serveur. Elle ne se retrouvera jamais dans un navigateur.
 
