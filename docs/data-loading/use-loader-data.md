@@ -22,7 +22,7 @@ Afficher sur la page de la playlist les informations suivantes:
 
 Ajouter le code suivant dans votre composant
 
-```tsx title="app/routes/_layout.playlists.$id.tsx"
+```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
   // highlight-next-line
   const playlist = useLoaderData<typeof loader>();
@@ -37,7 +37,7 @@ Comme le code est colocalisé, vous pouvez typer simplement la donnée dans votr
 
 Ajouter le code suivant dans votre composant
 
-```tsx title="app/routes/_layout.playlists.$id.tsx"
+```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
   const playlist = useLoaderData<typeof loader>();
 
