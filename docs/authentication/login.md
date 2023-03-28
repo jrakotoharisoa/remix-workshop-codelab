@@ -7,16 +7,62 @@ sidebar_position: 2
 Maintenant que nous savons persister un état entre différents échanges avec le serveur grâce aux sessions, nous pouvons stocker des informations concernant l'authentification d'un utilisateur
 
 :::info Exercice  
-1- Connecter un utilisateur  
-2- Afficher le status de connexion  
-3- Protéger une route  
+Créer une page `/login` qui s'affiche lorsque l'on essaie d'éditer une playlist lorsque le user n'est pas connecté (pas de `username` dans la session).
 :::
 
 ## Guide
 
-💿 ** Connecter un utilisateur **
+💿 ** Protéger la route d'edition **
 
-Quand le mot de passe est correct, utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
+Commençons par protéger notre route d'édition de playlist. Pour cela, nous allons modifier le loader pour rediriger l'utilisateur vers `/login?from=/your-current-route` si la session ne contient pas d'information sur l'identité de l'utilisateur.
+
+```tsx title="app/routes/_layout.playlist.$id.(edit).tsx"
+export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
+  //Récupération de la ssions
+  const session = await getSession(request.headers.get("Cookie"));
+
+  if (isEditionUrl(url.pathname)) {
+    // Verfication sur l'utilisateur est authentifié
+    if (!session.has("username")) {
+      // Redirection vers login si l'utilisateur n'est pas connecté
+      return redirect(`/login?from=${url.pathname}`);
+    }
+
+    //...
+  }
+  //...
+};
+```
+
+💿 ** Créer une route de login avec un formulaire login/password **
+
+```tsx title="app/routes/_layout.login.tsx"
+export default function Login() {
+  return (
+    <div>
+      <Form method="post">
+        <div>
+          <p>Authentification</p>
+        </div>
+        <label>
+          Utilisateur: <input name="username" />
+        </label>
+        <label>
+          Mot de passe: <input type="password" name="password" />
+        </label>
+
+        <button type="submit">Se connecter</button>
+      </Form>
+    </div>
+  );
+}
+```
+
+💿 ** Ajouter une action pour connecter l'utilisateur à la soumission du formulaire en persistant le `username` **
+
+Quand le mot de passe est correct (ici mot de passe = `devoxx2023`), utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
+
+userSession.set("username", username);
 
 ```tsx title="app/routes/_layout.login.tsx"
 import { ActionArgs, json, redirect } from "@remix-run/node";
@@ -31,7 +77,9 @@ const LoginRequestSchema = z.object({
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
-  const parsedResult = LoginRequestSchema.safeParse(Object.fromEntries(formData));
+  const parsedResult = LoginRequestSchema.safeParse(
+    Object.fromEntries(formData)
+  );
   if (!parsedResult.success) {
     return json({ error: "Invalid request" });
   }
@@ -42,38 +90,35 @@ export const action = async ({ request }: ActionArgs) => {
     return json({ error: "Invalid password" });
   }
 
-  // TODO
-})
+  // Ajout du username à la session pour indiquer que le user est connecté
+  const userSession = await getSession(request.headers.get("Cookie"));
+  userSession.set("username", username);
 
-export default function Login() {
-  const data = useActionData<typeof action>();
-
-  return (
-    <div>
-      {data?.error ? <div className="error">{data.error}</div> : null}
-      <Form method="post">
-        <div>
-          <p>Authentification</p>
-        </div>
-        <label>
-          Utilisateur: <input name="username" />
-        </label>
-        <label>
-          Mot de passe: <input type="password" name="password" />
-        </label>
-
-        <button type="submit">Soumettre</button>
-      </Form>
-    </div>
-  );
-}
+  // utilisation du searchParams "from" pour rediriger
+  return redirect(url.searchParams.get("from") || "/", {
+    headers: {
+      // `commitSession` Permet de persistance la sessions dans les cookie et de retourner le header de cookie
+      "Set-Cookie": await commitSession(userSession),
+    },
+  });
+};
 ```
 
-💿 ** Afficher le status de connexion **
+💿 ** Afficher le status de connexion de la barre de navigation **
 
-Modifier votre loader pour récupérer l'état de connexion de l'utilisateur
+Modifier le loader de `_layout.tsx` pour récupérer l'état de connexion de l'utilisateur et utiliser l'information dans notre composant.
 
 ```tsx title="app/routes/_layout.tsx"
+export const loader = async ({ request }: LoaderArgs) => {
+  // highlight-start
+  const session = await getSession(request.headers.get("Cookie"));
+  const isLogged = session.has("username");
+  // highlight-end
+  const playlists = await db.playlist.findMany();
+  // highlight-next-line
+  return json({ playlists, isLogged });
+};
+
 export default function Layout() {
   const { playlists, isLogged } = useLoaderData<typeof loader>();
 
@@ -97,10 +142,6 @@ export default function Layout() {
   );
 }
 ```
-
-💿 ** Proteger une route **
-
-Nous voulons proteger notre route d'edition de playlist. Modifier votre loader pour rediriger l'utilisateur vers `/login?from=/your-current-route` si la session ne contient pas d'information sur l'identité de l'utilisateur.
 
 :::info 👏 Vous pouvez maintenant connecter un utilisateur
 
