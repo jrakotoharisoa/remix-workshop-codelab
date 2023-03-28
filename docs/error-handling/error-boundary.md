@@ -4,10 +4,12 @@ sidebar_position: 1
 
 # Error boundary
 
-L'`ErrorBoundary` est un composant React qui sera rendu en cas d'erreur sur notre route. Remix affichera ce composant aussi bien pour les erreurs front que back donc toutes nos erreurs liées a une route serons gerées à un seul endroit.
+L'`ErrorBoundary` est un composant React qui sera rendu en lorsqu'une erreur sera levée sur notre route. L'erreur peut être levée par le code back-end (`loader` ou `action` par exemple), ou par le code front-end `Composant`.
+
+Remix utilisera ce composant pour rendre la page à la place du composant exporté par défaut.
 
 :::info Exercice  
-1- Attraper toutes les erreurs dans notre layout racine
+1- Attraper toutes les erreurs dans notre layout racine  
 2- Attraper des erreurs dans des routes imbriquées
 :::
 
@@ -50,7 +52,7 @@ export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
 };
 ```
 
-Nous pouvons visualiser l'erreur http://localhost:3000/playlists/cet-id-n-existe-pas
+Nous pouvons visualiser l'erreur [http://localhost:3000/playlists/cet-id-n-existe-pas](http://localhost:3000/playlists/cet-id-n-existe-pas)
 
 💿 ** Attraper des erreurs dans des routes imbriquées **
 
