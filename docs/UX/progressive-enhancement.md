@@ -12,7 +12,7 @@ Inclure les scripts Javascript dans vos pages.
 
 # Guide
 
-💿 ** Ajout du composant `<Scripts />` **
+💿 ** Ajouter le composant `<Scripts />` **
 
 Pour inclure, les scripts Javascript dans vos pages, il suffit inclure le composant `<Scripts />` que Remix nous fournis dans le ficheir `root.tsx` de l'application.
 

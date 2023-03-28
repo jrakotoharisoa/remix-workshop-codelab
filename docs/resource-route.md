@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Resource route
+# Route ressource
 
 Remix permet de colocaliser le code front et back mais parfois on a besoin de créer un endpoint back uniquement. C'est ce qu'on appelle une resource route et avec tout ce que nous avons deja vu, vous savez deja le faire.
 
@@ -12,7 +12,7 @@ Permettre le téléchargement des données d'une playlist au format JSON.
 
 ## Guide
 
-💿 ** Création de le resource route **
+💿 **Créer la route resource**
 
 Dans le dossier des routes, nous avons juste à créer un module qui exportera un `loader` pour la route `/api/playlists/:id.json` qui retournera un contenue `json`
 
@@ -47,7 +47,7 @@ export const loader = async ({ params: { id = "" } }: LoaderArgs) => {
 
 </details>
 
-💿 ** Ajout d'un lien dans l'interface **
+💿 **Ajouter d'un lien dans l'interface**
 
 Dans la page d'affichage d'une playlist, nous allons ajouter un lien pour télécharger les données
 

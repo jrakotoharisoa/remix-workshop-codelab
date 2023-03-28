@@ -15,7 +15,7 @@ Ici, nous voulons créer une URL à plusieurs segments et faire en sorte que tou
 
 ## Guide
 
-💿 **Modification de l'URL**
+💿 **Modifier l'URL**
 
 Pour générer des URLs avec plusieurs segments, Remix aura pour convention de remplacer les `.` dans les noms de fichiers par des `/`.
 
@@ -29,7 +29,7 @@ Ainsi en renommant notre module route en `playlists.ma-premiere-playlist.tsx`, n
 Si l'on accède à l'URL [http://localhost:3000/playlists/ma-premiere-playlist](http://localhost:3000/playlists/ma-premiere-playlist), on retrouve notre page.
 :::
 
-💿 **Utilisation du layout**
+💿 **Utiliser le layout**
 
 L'application existante possède un `layout` définie dans `app/routes/_layout/route.tsx`.
 

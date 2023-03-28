@@ -19,7 +19,7 @@ Pour cela nous allons utiliser les segements d'URL optionnel.
 
 ## Guide
 
-💿 **Modification de l'URL**
+💿 **Modifier de l'URL**
 
 Pour créer un segement d'URL optionnel, il suffit de mettre en paranthèse dans le nom du fichier la partie optionnel.
 

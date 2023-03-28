@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Créer votre première application
+# Notre première application
 
 :::caution Pré requis
 Avant de commencer, assurons nous d'avoir éléments suivants:
@@ -13,9 +13,9 @@ Avant de commencer, assurons nous d'avoir éléments suivants:
 
 :::
 
-## Initialisation de notre application
+## Initialiser l'application
 
-💿 **Créer votre application**
+💿 **Créer l'application**
 
 Pour créer une application Remix nous allons pour utiliser la commande `npx create-remix@latest`. Pour ce workshop, nous allons nous basé sur un template.
 

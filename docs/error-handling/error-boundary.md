@@ -15,7 +15,7 @@ Remix utilisera ce composant pour rendre la page à la place du composant export
 
 ## Guide
 
-💿 ** Attraper toutes les erreurs **
+💿 **Attraper toutes les erreurs**
 
 Dans notre layout racine, il suffit d'exporter une fonction `ErrorBoundary`
 
@@ -32,7 +32,7 @@ export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
 
 </details>
 
-💿 ** Generer une erreur **
+💿 **Lever une erreur**
 
 Nous allons ajouter une erreur lorsqu'un mauvais id de playlist est passé dans l'url.
 

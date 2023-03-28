@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Action avec formulaire multiple
+# Formulaire multiple
 
 Nous allons maintenant permettre à notre route de gérer plusieurs actions: `ajout` et `suppression`.
 
@@ -12,7 +12,7 @@ Modifier le module route pour permettre de retirer une track d'une playlist.
 
 ## Guide
 
-💿 ** Ajout du formulaire **
+💿 **Ajouter un formulaire**
 
 Nous allons donc ajouter un formulaire avec un methode `post` sur chaque ligne correspond à la track d'une playlist.
 
@@ -53,7 +53,7 @@ export default function Playlist() {
 
 </details>
 
-💿 ** Mise à jour du schema Zod **
+💿 **Mettre à jour le schéma `Zod`**
 
 Nous allons mettons mettre à jour notre schema Zod pour s'assurer de la validité de notre requête.
 
@@ -74,7 +74,7 @@ const FormDataRequestSchema = z.object({
 Suite à la modification ci-dessus, la requête doit forcément contenir une action. Nous allons ajouter au bouton `Add` le name `action` et la value `add`.
 :::
 
-💿 ** Mise à jour de l'`action` **
+💿 **Mettre à jour l'`action`**
 
 Nous allons maintenant pouvoir modifier l'`action` pour retirer la track correspondant au `track_id` lorsque l'action vaut `delete`.
 

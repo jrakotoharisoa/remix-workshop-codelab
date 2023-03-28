@@ -16,7 +16,7 @@ Le bouton ne sera visible que en mode `edition`.
 
 ## Guide
 
-💿 ** Identification du mode `edition` **
+💿 **Identifier le mode `edition`**
 
 Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page afin de réutiliser notre fonction utilitaire `isEditionUrl` pour savoir si nous sommes en mode `edition`.
 
@@ -36,7 +36,7 @@ export default function Playlist() {
 
 </details>
 
-💿 ** Ajout du formulaire **
+💿 **Ajouter un formulaire**
 
 Nous allons donc ajouter un formulaire avec un methode `post`.  
 Le formulaire aura:

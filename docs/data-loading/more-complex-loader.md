@@ -14,7 +14,7 @@ Pour cela vous pouvez vous aider de la méthode `findAvailableTracksNotIn` dans 
 
 ## Guide
 
-💿 **Identification du mode `edition`**
+💿 **Identifier le mode `edition`**
 
 Pour savoir si nous sommes en mode `edition`, nous allons regarder sur le `pathname` de l'URL se termine par `/edit`.
 
@@ -63,7 +63,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 
 </details>
 
-💿 **Adaption du composant à la nouvelle réponse du `loader`**
+💿 **Adapter le composant à la nouvelle réponse du `loader`**
 
 Vous avez maintenant une erreur dans votre composant car vous avez changer le type de réponse du `loader`.
 
@@ -83,7 +83,7 @@ export default function Playlist() {
 
 </details>
 
-💿 **Affichage des tracks disponibles**
+💿 **Affciher les tracks disponibles**
 
 Nous allons maintenant pouvoir afficher les tracks disponnibles en récupérants les données en sortie du `useLoaderData`
 

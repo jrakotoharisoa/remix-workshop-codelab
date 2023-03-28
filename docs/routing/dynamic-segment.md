@@ -13,7 +13,7 @@ Modifier le nom du fichier, pour que l'URL de la route corresponde à l'URL d'un
 
 ## Guide
 
-💿 **Modification de l'URL**
+💿 **Modifier l'URL**
 
 Les segments dynamiques nous permettent de faire correspondre des segments de l'URL et d'utiliser cette valeur dans notre code. Pour les créer, il nous faudra préfixer le segment par `$`.
 

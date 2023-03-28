@@ -12,7 +12,7 @@ Pré charge vos pages au survol des liens situés dans la bar de navigation.
 
 ## Guide
 
-💿 ** Ajouter la propriété `prefetch` au composant `<NavLink />` **
+💿 **Ajouter la propriété `prefetch` au composant `<NavLink />`**
 
 Dans le module `_layout.tsx`, nous allons ajouter la propriété `prefetch` avec la valeur `intent` sur le composant `<Navlink >`. Cela va permettre d'appeler les `loader` associés à la page du lien au survol de celui-ci.
 
@@ -45,7 +45,7 @@ export default function App() {
 
 </details>
 
-💿 ** Ajouter des headers de caches **
+💿 **Ajouter des headers de cache**
 
 Maintenant que le `loader` est appelé avant l'affichage de la page, il faut maintenant ajouter des `headers` de cache. Cela va permettre que lors de la navigation sur la page, l'appel du loader se servent de la réponse mis en cache lors de pré-chargement.
 

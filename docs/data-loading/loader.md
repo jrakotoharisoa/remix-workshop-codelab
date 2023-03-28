@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Récupération des données
+# Chargement des données
 
 Pour pouvoir afficher des données dynamiques sur nos pages, nous allons devoir charger ces données. C'est le rôle de la fonction `loader` exportée dans un module route.
 
@@ -33,7 +33,7 @@ export const loader = () => {
 
 </details>
 
-💿 **Récuperer l'id de la playlist à afficher**
+💿 **Récupérer l'id de la playlist à afficher**
 
 Remix appelle notre fonction `loader` avec différent données:
 
@@ -58,7 +58,7 @@ export const loader = ({ params }: LoaderArgs) => {
 
 </details>
 
-💿 **Récuperer les données de la playlist**
+💿 **Récupérer les données de la playlist**
 
 Maintenant que nous avons l'id, nous allons pouvoir récuperer les données dans notre base de données.
 

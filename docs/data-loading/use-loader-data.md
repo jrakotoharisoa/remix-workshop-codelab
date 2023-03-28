@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Lecture des données dans le composant
+# Affichage des données dans le composant
 
 Tandis que la fonction `loader` nous permet lire les données côté back-end. Le hook `useLoaderData()` nous permet d'accéder aux données dans le composant correspondant à la vue.
 
@@ -18,7 +18,7 @@ Afficher sur la page de la playlist les informations suivantes:
 
 ## Guide
 
-💿 ** Récupérer les données du loader **
+💿 **Récupérer les données du loader**
 
 <details>
   <summary>Voir une solution</summary>
@@ -36,7 +36,7 @@ export default function Playlist() {
 Comme le code est colocalisé, vous pouvez typer simplement la donnée dans votre composant avec `typeof loader`.
 :::
 
-💿 ** Afficher les informations **
+💿 **Afficher les informations**
 
 <details>
   <summary>Voir une solution</summary>

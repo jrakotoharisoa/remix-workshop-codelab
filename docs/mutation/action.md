@@ -15,7 +15,7 @@ Créer une fonction `action` qui, lorsqu'elle est exécutée, ajoute la track id
 
 ## Guide
 
-💿 ** Définition de la fonction `action` **
+💿 **Définir une fonction `action`**
 
 <details>
   <summary>Voir une solution</summary>
@@ -26,7 +26,7 @@ export const action = () => {};
 
 </details>
 
-💿 ** Récupération des données soumises **
+💿 **Récupérer des données soumises**
 
 On va pouvoir récupérer l'id de la playlist dans les paramètres de l'url et l'id de la track à ajouter dans le form data de la requête.
 
@@ -44,7 +44,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 </details>
 
-💿 ** Validation des données soumises **
+💿 **Valider les données soumises**
 
 Pour s'assurer que les données soumises sont valides nous allons utiliser la librairie `zod`. Cette librairie nous permet de définir la structure d'une objet et de valider au runtime cette structure.
 
@@ -71,7 +71,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 </details>
 
-💿 ** Mutation de l'état du serveur **
+💿 **Changer l'état du serveur**
 
 `action` étant une fonction exécuté côté serveur uniquement, nous allons pouvoir ici appeler directement nous repository.
 
