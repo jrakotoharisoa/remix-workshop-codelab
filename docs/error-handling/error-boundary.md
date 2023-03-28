@@ -61,17 +61,9 @@ Afin de conserver une partie de notre interface nous pouvons attraper les erreur
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 import { ErrorBoundaryComponent } from "@remix-run/node";
 
-export const loader = async ({ request }: LoaderArgs) => {
-  // ...
-};
-
 export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => {
   return <>{error.message}</>;
 };
-
-export default function Playlist() {
-  // ...
-}
 ```
 
 Nous pouvons visualiser l'erreur http://localhost:3000/playlists/cet-id-n-existe-pas et voir qu'une partie de layout est toujours visible
