@@ -7,12 +7,34 @@ sidebar_position: 1
 Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités, est d'utiliser les cookies. Et pour cela Remix met à dispotion un petit helper `createCookieSessionStorage`.
 
 :::info Exercice
-1-Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
+Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
 :::
 
 ## Guide
 
-💿 ** Création d'un manager de session **
+💿 **Créer une nouvelle page avec un formualiree**
+
+```tsx title="app/test-session.tsx"
+import { Form } from "@remix-run/react";
+
+export default function Layout() {
+  return (
+    <div>
+      <div>Je suis {name}</div>
+      <Form method="post">
+        <label>
+          Qui etes vous ?
+          <input autoComplete="off" name="name" />
+        </label>
+
+        <button type="submit">Valider</button>
+      </Form>
+    </div>
+  );
+}
+```
+
+💿 ** Créer un manager de session **
 
 ```tsx title="app/utils/user-session.server.ts"
 import { createCookieSessionStorage } from "@remix-run/node";
@@ -33,27 +55,45 @@ const { getSession, commitSession, destroySession } =
 export { getSession, commitSession, destroySession };
 ```
 
-💿 ** Création d'une session **
+💿 ** Stocker le `username` lors de la soumission du formulaire dans la session **
 
-Utiliser le manager de session pour stocker le `username` lors de la soumission du formulaire et lire la valeur dans le loader.
-
-```tsx title="app/utils/user-session.server.ts"
-import { ActionArgs, LoaderArgs } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
-
-export const loader = async ({ request }: LoaderArgs) => {
-  // TODO
-};
+```tsx title="app/test-session.tsx"
+import { ActionArgs } from "@remix-run/node";
 
 export const action = async ({ request }: ActionArgs) => {
-  // TODO
+  const formData = await request.formData();
+  const name = formData.get("name").toString() || "";
+  const userSession = await getSession(request.headers.get("Cookie"));
+  userSession.set("name", name);
+  return redirect(".", {
+    headers: {
+      "Set-Cookie": await commitSession(userSession),
+    },
+  });
 };
+```
+
+💿 ** Lecture de la session le `loader` pour afficher le `username` **
+
+```tsx title="app/test-session.tsx"
+import { LoaderArgs, json } from "@remix-run/node";
+import { Form, useLoaderData } from "@remix-run/react";
+
+// highlight-start
+export const loader = async ({ request }: LoaderArgs) => {
+  const userSession = await getSession(request.headers.get("Cookie"));
+  const name = userSession.get("name");
+  return json({ name });
+};
+// highlight-end
 
 export default function Layout() {
+  // highlight-next-line
   const { name } = useLoaderData<typeof loader>();
 
   return (
     <div>
+      // highlight-next-line
       <div>Je suis {name}</div>
       <Form method="post">
         <label>
