@@ -24,7 +24,7 @@ Pour pouvoir manipuler l'URL nous allons créer une `URL` à partir de la propri
 const url = new URL(request.url);
 ```
 
-Nous allons ensuite créer un petite fonction nous permettant de savoir si nous sommes en mode `edition`:
+Nous allons ensuite créer un petite fonction nous permettant de savoir si nous sommes en mode `edition`
 
 ```tsx
 const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
@@ -33,6 +33,9 @@ const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
 💿 **Ajouter les tracks disponibles dans la réponse du `loader`**
 
 Avec cela nous allons pouvoir récupérer les tracks disponibles avec la méthode `findAvailableTracksNotIn` lorsque nous sommes en mode `edition` pour le rétourner dans la réponse.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // highlight-next-line
@@ -58,11 +61,16 @@ export const loader = async ({ params }: LoaderArgs) => {
 };
 ```
 
+</details>
+
 💿 **Adaption du composant à la nouvelle réponse du `loader`**
 
 Vous avez maintenant une erreur dans votre composant car vous avez changer le type de réponse du `loader`.
 
-Nous allons donc modifier le code permettant de récuperer les données avec le hook `useLoaderData`:
+Nous allons donc modifier le code permettant de récuperer les données avec le hook `useLoaderData`
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // ...
@@ -73,9 +81,14 @@ export default function Playlist() {
 }
 ```
 
+</details>
+
 💿 **Affichage des tracks disponibles**
 
 Nous allons maintenant pouvoir afficher les tracks disponnibles en récupérants les données en sortie du `useLoaderData`
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // ...
@@ -86,7 +99,12 @@ export default function Playlist() {
 }
 ```
 
-Nous pouvons maintenant les afficher avec le code suivant:
+</details>
+
+Nous pouvons maintenant les afficher.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
@@ -114,6 +132,8 @@ export default function Playlist() {
   );
 }
 ```
+
+</details>
 
 :::info 👏 Nous avons une page d'édition prête à effectuer des modifications.
 

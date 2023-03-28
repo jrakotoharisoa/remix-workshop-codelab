@@ -26,6 +26,9 @@ L'ajout d'une nom et d'une valeur au bouton submit va nous permettre d'identifie
 
 :::
 
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
   //...
@@ -48,9 +51,14 @@ export default function Playlist() {
 }
 ```
 
+</details>
+
 💿 ** Mise à jour du schema Zod **
 
 Nous allons mettons mettre à jour notre schema Zod pour s'assurer de la validité de notre requête.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 const FormDataRequestSchema = z.object({
@@ -60,6 +68,8 @@ const FormDataRequestSchema = z.object({
 });
 ```
 
+</details>
+
 :::info Attention !
 Suite à la modification ci-dessus, la requête doit forcément contenir une action. Nous allons ajouter au bouton `Add` le name `action` et la value `add`.
 :::
@@ -67,6 +77,9 @@ Suite à la modification ci-dessus, la requête doit forcément contenir une act
 💿 ** Mise à jour de l'`action` **
 
 Nous allons maintenant pouvoir modifier l'`action` pour retirer la track correspondant au `track_id` lorsque l'action vaut `delete`.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
@@ -82,6 +95,8 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
   return null;
 };
 ```
+
+</details>
 
 :::info 👏 Nous pouvons maintenant modifier nos playlist en y ajoutant et supprimant des tracks.
 

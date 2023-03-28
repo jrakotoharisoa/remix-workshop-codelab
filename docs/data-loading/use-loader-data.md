@@ -18,9 +18,10 @@ Afficher sur la page de la playlist les informations suivantes:
 
 ## Guide
 
-💿 ** Récuperer les données du loader **
+💿 ** Récupérer les données du loader **
 
-Ajouter le code suivant dans votre composant
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
@@ -29,13 +30,16 @@ export default function Playlist() {
 }
 ```
 
+</details>
+
 :::tip
 Comme le code est colocalisé, vous pouvez typer simplement la donnée dans votre composant avec `typeof loader`.
 :::
 
 💿 ** Afficher les informations **
 
-Ajouter le code suivant dans votre composant
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
@@ -57,6 +61,8 @@ export default function Playlist() {
   );
 }
 ```
+
+</details>
 
 :::info 👏 Nous avons maintenant des pages avec des données dynamiques.
 

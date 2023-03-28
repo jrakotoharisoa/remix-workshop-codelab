@@ -17,13 +17,21 @@ Créer une fonction `action` qui, lorsqu'elle est exécutée, ajoute la track id
 
 💿 ** Définition de la fonction `action` **
 
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = () => {};
 ```
 
+</details>
+
 💿 ** Récupération des données soumises **
 
-On va pouvoir récupérer l'id de la playlist dans les paramètres de l'url et l'id de la track à ajouter dans le form data de la request
+On va pouvoir récupérer l'id de la playlist dans les paramètres de l'url et l'id de la track à ajouter dans le form data de la requête.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // highlight-start
@@ -34,11 +42,16 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 };
 ```
 
+</details>
+
 💿 ** Validation des données soumises **
 
 Pour s'assurer que les données soumises sont valides nous allons utiliser la librairie `zod`. Cette librairie nous permet de définir la structure d'une objet et de valider au runtime cette structure.
 
 Cela nous permet en plus de la validation d'avoir par la suite des données correctement typées.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // highlight-start
@@ -56,9 +69,14 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 };
 ```
 
+</details>
+
 💿 ** Mutation de l'état du serveur **
 
 `action` étant une fonction exécuté côté serveur uniquement, nous allons pouvoir ici appeler directement nous repository.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
@@ -71,6 +89,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 };
 ```
 
+</details>
 :::info 👏 Nous pouvons maintenant modifier nos playlist en y ajoutant des tracks.
 
 Ajoutons maintenant la possibilité de retirer des tracks de la playlist.

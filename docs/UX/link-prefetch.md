@@ -16,6 +16,13 @@ Pré charge vos pages au survol des liens situés dans la bar de navigation.
 
 Dans le module `_layout.tsx`, nous allons ajouter la propriété `prefetch` avec la valeur `intent` sur le composant `<Navlink >`. Cela va permettre d'appeler les `loader` associés à la page du lien au survol de celui-ci.
 
+:::tip En savoir plus
+Voir la section [Pre-fetch](https://remix.run/docs/en/1.14.3/components/link#prefetch) dans la doc.
+:::
+
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/_layout.tsx"
 import { Scripts } from "@remix-run/react";
 
@@ -36,9 +43,7 @@ export default function App() {
 }
 ```
 
-:::tip En savoir plus
-Voir la section [Pre-fetch](https://remix.run/docs/en/1.14.3/components/link#prefetch) dans la doc.
-:::
+</details>
 
 💿 ** Ajouter des headers de caches **
 
@@ -47,7 +52,10 @@ Maintenant que le `loader` est appelé avant l'affichage de la page, il faut mai
 Pour cela nous allons ajouter le header de cache suivant à la réponse du loader:
 
 - `private` pour cacher uniquement dans le navigateur
-- max-age=10 pour une cache valide de 10secs
+- `max-age=10` pour une cache valide de 10secs
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const loader = async ({ params }: LoaderArgs) => {
@@ -64,6 +72,8 @@ export const loader = async ({ params }: LoaderArgs) => {
   );
 };
 ```
+
+</details>
 
 :::info 👏 Vos pages s'affiche maintenant plus rapidement.
 

@@ -20,13 +20,18 @@ Définir un `loader` dans le module route d'une playlist. Afin d'afficher les in
 
 💿 **Définir une fonction loader**
 
-Ajouter le code suivant dans votre route
+Exporter une fonction loader.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.tsx"
 export const loader = () => {
   return null;
 };
 ```
+
+</details>
 
 💿 **Récuperer l'id de la playlist à afficher**
 
@@ -38,6 +43,9 @@ Remix appelle notre fonction `loader` avec différent données:
 
 Pour récupérer le segment dynamique de l'URL dans `params`.
 
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/routes/_layout.playlists.$id.tsx"
 // highlight-next-line
 export const loader = ({ params }: LoaderArgs) => {
@@ -47,6 +55,8 @@ export const loader = ({ params }: LoaderArgs) => {
   return null;
 };
 ```
+
+</details>
 
 💿 **Récuperer les données de la playlist**
 
@@ -58,7 +68,8 @@ Pour faire simple, nous allons directement appeler notre repository dans le load
 Vous pouvez utiliser le repository `playlists` pour retrouver les données d'une playlist.
 :::
 
-On aura donc le code suivant
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.tsx"
 // highlight-next-line
@@ -71,9 +82,14 @@ export const loader = async ({ params }: LoaderArgs) => {
 };
 ```
 
+</details>
+
 💿 **Retourner les données en réponse du loader**
 
 La sortie du `loader` doit correspondre à une réponse de l'`API Fetch`. Pour nous aider Remix met à disposition un helper `json` qui nous permet de retourner un réponse avec des données au format `json`.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.tsx"
 export const loader = async ({ params }: LoaderArgs) => {
@@ -87,6 +103,8 @@ export const loader = async ({ params }: LoaderArgs) => {
   return json(playlist);
 };
 ```
+
+</details>
 
 :::tip Test
 Pour tester votre API, vous pouvez accéder à la route suivante: [http://localhost:3000/test?\_data](http://localhost:3000/test?_data)

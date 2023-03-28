@@ -16,6 +16,9 @@ Créer une page `/login` qui s'affiche lorsque l'on essaie d'éditer une playlis
 
 Commençons par protéger notre route d'édition de playlist. Pour cela, nous allons modifier le loader pour rediriger l'utilisateur vers `/login?from=/your-current-route` si la session ne contient pas d'information sur l'identité de l'utilisateur.
 
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/routes/_layout.playlist.$id.(edit).tsx"
 export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
   //Récupération de la ssions
@@ -34,7 +37,12 @@ export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
 };
 ```
 
+</details>
+
 💿 ** Créer une route de login avec un formulaire login/password **
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.login.tsx"
 export default function Login() {
@@ -58,11 +66,14 @@ export default function Login() {
 }
 ```
 
+</details>
+
 💿 ** Ajouter une action pour connecter l'utilisateur à la soumission du formulaire en persistant le `username` **
 
 Quand le mot de passe est correct (ici mot de passe = `devoxx2023`), utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
 
-userSession.set("username", username);
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.login.tsx"
 import { ActionArgs, json, redirect } from "@remix-run/node";
@@ -104,9 +115,14 @@ export const action = async ({ request }: ActionArgs) => {
 };
 ```
 
+</details>
+
 💿 ** Afficher le status de connexion de la barre de navigation **
 
 Modifier le loader de `_layout.tsx` pour récupérer l'état de connexion de l'utilisateur et utiliser l'information dans notre composant.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.tsx"
 export const loader = async ({ request }: LoaderArgs) => {
@@ -142,6 +158,8 @@ export default function Layout() {
   );
 }
 ```
+
+</details>
 
 :::info 👏 Vous pouvez maintenant connecter un utilisateur
 

@@ -18,6 +18,13 @@ Pour inclure, les scripts Javascript dans vos pages, il suffit inclure le compos
 
 Ce composant va permettre inclure le code client Javascript généré lors de la phase de compiliation.
 
+:::tip En savoir plus
+Voir la section [Scripts](https://remix.run/docs/en/1.14.3/components/scripts) dans la doc.
+:::
+
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/root.tsx"
 import { Scripts } from "@remix-run/react";
 
@@ -40,9 +47,7 @@ export default function App() {
 }
 ```
 
-:::tip En savoir plus
-Voir la section [Scripts](https://remix.run/docs/en/1.14.3/components/scripts) dans la doc.
-:::
+</details>
 
 :::info 👏 Votre application propose maintenant une expérience améliorée lorsque le Javascript est chargé.
 

@@ -18,7 +18,10 @@ Le bouton ne sera visible que en mode `edition`.
 
 💿 ** Identification du mode `edition` **
 
-Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page afin de réutiliser notre fonction utilitaire `isEditionUrl` pour savoir si nous sommes en mode `edition`
+Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page afin de réutiliser notre fonction utilitaire `isEditionUrl` pour savoir si nous sommes en mode `edition`.
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
@@ -31,6 +34,8 @@ export default function Playlist() {
 }
 ```
 
+</details>
+
 💿 ** Ajout du formulaire **
 
 Nous allons donc ajouter un formulaire avec un methode `post`.  
@@ -38,6 +43,21 @@ Le formulaire aura:
 
 - un `input` de type `hidden` permettant d'envoyer l'information `track_id` correspondant à l'id de la track à ajouter.
 - un bouton `submit`
+
+:::tip
+Nous utilisons ici le composant `<Form />` de Remix à la place de la balise `form` classique. Cela permet:
+
+- De sérialiser les données de la même façon avec ou sans Javascript
+- D'avoir une expérience améliorer lorsque le Javascript est chargé. Cela, en rappelant les loaders automatiquement à la soumission du formulaire pour garder un UI à jour sans rechargement de page
+
+:::
+
+:::tip En savoir plus
+Voir la section [Form](https://remix.run/docs/en/1.14.3/components/form) dans la doc.
+:::
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export default function Playlist() {
@@ -59,17 +79,7 @@ export default function Playlist() {
 }
 ```
 
-:::tip
-Nous utilisons ici le composant `<Form />` de Remix à la place de la balise `form` classique. Cela permet:
-
-- De sérialiser les données de la même façon avec ou sans Javascript
-- D'avoir une expérience améliorer lorsque le Javascript est chargé. Cela, en rappelant les loaders automatiquement à la soumission du formulaire pour garder un UI à jour sans rechargement de page
-
-:::
-
-:::tip En savoir plus
-Voir la section [Form](https://remix.run/docs/en/1.14.3/components/form) dans la doc.
-:::
+</details>
 
 :::info 👏 Notre page est maintenant capable d'envoyer des requête de mutation à notre serveur.
 

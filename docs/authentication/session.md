@@ -14,6 +14,9 @@ Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la
 
 💿 **Créer une nouvelle page avec un formualiree**
 
+<details>
+  <summary>Voir une solution</summary>
+
 ```tsx title="app/test-session.tsx"
 import { Form } from "@remix-run/react";
 
@@ -34,7 +37,12 @@ export default function Layout() {
 }
 ```
 
+</details>
+
 💿 ** Créer un manager de session **
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/utils/user-session.server.ts"
 import { createCookieSessionStorage } from "@remix-run/node";
@@ -55,7 +63,12 @@ const { getSession, commitSession, destroySession } =
 export { getSession, commitSession, destroySession };
 ```
 
+</details>
+
 💿 ** Stocker le `username` lors de la soumission du formulaire dans la session **
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/test-session.tsx"
 import { ActionArgs } from "@remix-run/node";
@@ -73,7 +86,12 @@ export const action = async ({ request }: ActionArgs) => {
 };
 ```
 
+</details>
+
 💿 ** Lecture de la session le `loader` pour afficher le `username` **
+
+<details>
+  <summary>Voir une solution</summary>
 
 ```tsx title="app/test-session.tsx"
 import { LoaderArgs, json } from "@remix-run/node";
@@ -108,7 +126,13 @@ export default function Layout() {
 }
 ```
 
+</details>
+
 :::info 👏 Vous avez maintenant un état persisté sans JS
 
 Voyons comment utiliser cette mecanique pour gérer l'authentification.
 :::
+
+```
+
+```
