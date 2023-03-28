@@ -20,7 +20,7 @@ Définir un `loader` dans le module route d'une playlist. Afin d'afficher les in
 
 💿 **Définir une fonction loader**
 
-Exporter une fonction loader.
+Exporter une fonction `loader`.
 
 <details>
   <summary>Voir une solution</summary>
@@ -41,7 +41,7 @@ Remix appelle notre fonction `loader` avec différent données:
 - les `params` correspondant aux segments dynamiques de l'url
 - un `context` remix
 
-Pour récupérer le segment dynamique de l'URL dans `params`.
+On pourra ainsi récupérer le segment dynamique de l'URL dans `params`.
 
 <details>
   <summary>Voir une solution</summary>
