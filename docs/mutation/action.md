@@ -90,6 +90,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 ```
 
 </details>
+
 :::info 👏 Nous pouvons maintenant modifier nos playlist en y ajoutant des tracks.
 
 Ajoutons maintenant la possibilité de retirer des tracks de la playlist.

@@ -90,5 +90,5 @@ export default function Playlist() {
 
 :::info 👏 Votre application est maintenant beaucoup plus réactive !
 
-Voyons maintenant comment lui rajoutez un peu de style.
+Voyons maintenant comment ajouter un peu de style spécifique à notre route.
 :::
