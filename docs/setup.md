@@ -20,7 +20,7 @@ Avant de commencer, assurons nous d'avoir éléments suivants:
 Pour créer une application Remix nous allons pour utiliser la commande `npx create-remix@latest`. Pour ce workshop, nous allons nous basé sur un template.
 
 ```bash
-npx create-remix@latest ./my-playlists --template https://github.com/jrakotoharisoa/remix-worksho/tree/template
+npx create-remix@latest ./my-playlists --template https://github.com/jrakotoharisoa/remix-workshop/tree/starter
 ```
 
 Voyons ce qui a été généré:
