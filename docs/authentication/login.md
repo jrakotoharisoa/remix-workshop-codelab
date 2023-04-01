@@ -21,7 +21,7 @@ Commençons par protéger notre route d'édition de playlist. Pour cela, nous al
 
 ```tsx title="app/routes/_layout.playlist.$id.(edit).tsx"
 export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
-  //Récupération de la ssions
+  //Récupération de la séssion
   const session = await getSession(request.headers.get("Cookie"));
 
   if (isEditionUrl(url.pathname)) {
@@ -39,24 +39,29 @@ export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
 
 </details>
 
-💿 ** Créer une route de login avec un formulaire login/password **
+💿 ** Ajout d'un champ username dans la page de login **
 
 <details>
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.login.tsx"
 export default function Login() {
+  const data = useActionData<typeof action>();
+
   return (
     <div>
       <Form method="post">
         <div>
           <p>Authentification</p>
         </div>
+        {/* highlight-start */}
         <label>
-          Utilisateur: <input name="username" />
+          Utilisateur: <input name="username" className="border-2" />
         </label>
+        {/* highlight-end */}
         <label>
-          Mot de passe: <input type="password" name="password" />
+          Mot de passe:{" "}
+          <input type="password" name="password" className={twMerge("border-2", data?.errors.password && "border-rose-500")} />
         </label>
 
         <button type="submit">Se connecter</button>
@@ -68,7 +73,7 @@ export default function Login() {
 
 </details>
 
-💿 ** Ajouter une action pour connecter l'utilisateur à la soumission du formulaire en persistant le `username` **
+💿 ** Persister le `username` dans la session à la soumission du formulaire **
 
 Quand le mot de passe est correct (ici mot de passe = `devoxx2023`), utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
 
@@ -86,19 +91,20 @@ const LoginRequestSchema = z.object({
   password: z.string().min(1),
 });
 
+type FormError = { errors: { username?: string[]; password?: string[] } };
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
-  const parsedResult = LoginRequestSchema.safeParse(
-    Object.fromEntries(formData)
-  );
+  const url = new URL(request.url);
+  const userSession = await getSession(request.headers.get("Cookie"));
+  const parsedResult = LoginRequestSchema.safeParse(Object.fromEntries(formData));
   if (!parsedResult.success) {
-    return json({ error: "Invalid request" });
+    return json<FormError>({ errors: parsedResult.error.formErrors.fieldErrors });
   }
 
   const { username, password } = parsedResult.data;
 
   if (password !== "devoxx2023") {
-    return json({ error: "Invalid password" });
+    return json<FormError>({ errors: { password: ["Invalid password"] } });
   }
 
   // Ajout du username à la session pour indiquer que le user est connecté
@@ -117,7 +123,7 @@ export const action = async ({ request }: ActionArgs) => {
 
 </details>
 
-💿 ** Afficher le status de connexion de la barre de navigation **
+💿 ** Afficher le status de connexion dans la barre de navigation **
 
 Modifier le loader de `_layout.tsx` pour récupérer l'état de connexion de l'utilisateur et utiliser l'information dans notre composant.
 
@@ -147,9 +153,7 @@ export default function Layout() {
             <span>Remix</span>
           </p>
           // highlight-next-line
-          <p className="flex items-center space-x-2">
-            status: {isLogged ? "connecté" : "deconnecté"}
-          </p>
+          <p className="flex items-center space-x-2">status: {isLogged ? "connecté" : "deconnecté"}</p>
         </div>
         ...
       </aside>

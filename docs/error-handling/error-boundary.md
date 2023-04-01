@@ -10,9 +10,9 @@ Remix utilisera ce composant pour rendre la page à la place du composant export
 
 :::info Exercice  
 1- Attraper toutes les erreurs dans notre layout racine  
-2- Attraper des erreurs dans des routes imbriquées
-3- Gerer les codes HTTP
-4- Recuperer le code HTTP dans l'erreur
+2- Attraper des erreurs dans des routes imbriquées  
+3- Gerer les codes HTTP  
+4- Recuperer le code HTTP dans l'erreur  
 5- Deleguer certaines erreurs
 :::
 

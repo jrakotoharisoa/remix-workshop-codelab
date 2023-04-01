@@ -12,7 +12,7 @@ Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la
 
 ## Guide
 
-💿 **Créer une nouvelle page avec un formualiree**
+💿 ** Créer une nouvelle page avec un formualire **
 
 <details>
   <summary>Voir une solution</summary>
@@ -47,18 +47,17 @@ export default function Layout() {
 ```tsx title="app/utils/user-session.server.ts"
 import { createCookieSessionStorage } from "@remix-run/node";
 
-const { getSession, commitSession, destroySession } =
-  createCookieSessionStorage({
-    cookie: {
-      name: "__devoxx-remix",
-      httpOnly: true,
-      maxAge: 60,
-      path: "/",
-      sameSite: "lax",
-      secrets: ["jx!bnVNNqJ%4q2&8W6FoMOh!YeBGf&t#swtf&p#ORC"],
-      secure: true,
-    },
-  });
+const { getSession, commitSession, destroySession } = createCookieSessionStorage({
+  cookie: {
+    name: "__devoxx-remix",
+    httpOnly: true,
+    maxAge: 60,
+    path: "/",
+    sameSite: "lax",
+    secrets: ["jx!bnVNNqJ%4q2&8W6FoMOh!YeBGf&t#swtf&p#ORC"],
+    secure: true,
+  },
+});
 
 export { getSession, commitSession, destroySession };
 ```

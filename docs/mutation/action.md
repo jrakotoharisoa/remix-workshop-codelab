@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Traitement des requêtes de mutations
 
-Lorsqu'une requête de mutation est effectué (méthodes `POST`, `PATCH`, `PUT` ou `DELETE`) sur notre route, la fonction `action` est appelé. Cette fonction est exécuter côté serveur uniquement.
+Lorsqu'une requête de mutation est effectué (méthodes `POST`, `PATCH`, `PUT` ou `DELETE`) sur notre route, la fonction `action` est appelé. Cette fonction est exécutée côté serveur uniquement.
 
 Nous allons maintenant permettre la modification des playlists en traitant ces requêtes de mutation.
 
@@ -73,7 +73,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 💿 **Changer l'état du serveur**
 
-`action` étant une fonction exécuté côté serveur uniquement, nous allons pouvoir ici appeler directement nous repository.
+`action` étant une fonction exécuté côté serveur uniquement, nous allons pouvoir ici appeler directement notre repository.
 
 <details>
   <summary>Voir une solution</summary>
