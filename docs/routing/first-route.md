@@ -19,7 +19,7 @@ Comme nous l'avons vu précédemment, Remix se base sur les fichiers dans le dos
 Nous allons donc ajouter un fichier `ma-premiere-page.tsx` dans le répertoire `app/routes`.
 
 :::caution
-Si l'on accède à l'url [http://localhost:3001/ma-premiere-page](http://localhost:3000/ma-premiere-page), on tombe sur une page 404, car aucune page n'est définie pour cette url.
+Si l'on accède à l'url [http://localhost:3000/ma-premiere-page](http://localhost:3000/ma-premiere-page), on tombe sur une page 404, car aucune page n'est définie pour cette url.
 :::
 💿 **Associer un contenu à la route**
 
