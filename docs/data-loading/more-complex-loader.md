@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Affichage des tracks disponibles
 
-Nous allons maintenant préparer notre page d'édition, en affichant la liste des tracks non présentes dans la playlist.
+Nous allons maintenant préparer notre page d'édition, en affichant la liste des tracks non présente dans la playlist.
 
 :::info Exercice  
 En mode `edition`, afficher sur la page de la playlist les tracks non présentes dans la playlist.
@@ -18,13 +18,13 @@ Pour cela vous pouvez vous aider de la méthode `findAvailableTracksNotIn` dans 
 
 Pour savoir si nous sommes en mode `edition`, nous allons regarder sur le `pathname` de l'URL se termine par `/edit`.
 
-Pour pouvoir manipuler l'URL nous allons créer une `URL` à partir de la propriétés `url` de la request:
+Pour pouvoir manipuler l'URL, nous allons créer une `URL` à partir de la propriété `url` de la request:
 
 ```tsx
 const url = new URL(request.url);
 ```
 
-Nous allons ensuite créer un petite fonction nous permettant de savoir si nous sommes en mode `edition`
+Nous allons ensuite créer une petite fonction nous permettant de savoir si nous sommes en mode `edition`
 
 ```tsx
 const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
@@ -32,7 +32,7 @@ const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
 
 💿 **Ajouter les tracks disponibles dans la réponse du `loader`**
 
-Avec cela nous allons pouvoir récupérer les tracks disponibles avec la méthode `findAvailableTracksNotIn` lorsque nous sommes en mode `edition` pour le rétourner dans la réponse.
+Avec cela, nous allons pouvoir récupérer les tracks disponibles avec la méthode `findAvailableTracksNotIn` lorsque nous sommes en mode `edition` pour le retourner dans la réponse.
 
 <details>
   <summary>Voir une solution</summary>
@@ -65,9 +65,9 @@ export const loader = async ({ params }: LoaderArgs) => {
 
 💿 **Adapter le composant à la nouvelle réponse du `loader`**
 
-Vous avez maintenant une erreur dans votre composant car vous avez changer le type de réponse du `loader`.
+Vous avez maintenant une erreur dans votre composant car vous avez changé le type de réponse du `loader`.
 
-Nous allons donc modifier le code permettant de récuperer les données avec le hook `useLoaderData`
+Nous allons donc modifier le code permettant de récupérer les données avec le hook `useLoaderData`
 
 <details>
   <summary>Voir une solution</summary>
@@ -83,9 +83,9 @@ export default function Playlist() {
 
 </details>
 
-💿 **Affciher les tracks disponibles**
+💿 **Afficher les tracks disponibles**
 
-Nous allons maintenant pouvoir afficher les tracks disponnibles en récupérants les données en sortie du `useLoaderData`
+Nous allons maintenant pouvoir afficher les tracks disponibles en récupérant les données en sortie du `useLoaderData`
 
 <details>
   <summary>Voir une solution</summary>

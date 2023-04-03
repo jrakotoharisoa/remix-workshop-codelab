@@ -9,7 +9,7 @@ Tandis que la fonction `loader` nous permet lire les données côté back-end. L
 L'utilisation du hook va permettre d'avoir accès aux données directement pendant la phase de server side rendering mais également lors de navigation front-end, le composant sera capable d'effectuer des appels fetch vers le serveur pour récupérer les données sans avoir à recharger toute la page.
 
 :::info Exercice  
-Afficher sur la page de la playlist les informations suivantes:
+Afficher sur la page de la playlist les informations suivantes :
 
 - nom de la playlist
 - Liste tracks (titre + auteur)
@@ -66,5 +66,5 @@ export default function Playlist() {
 
 :::info 👏 Nous avons maintenant des pages avec des données dynamiques.
 
-Voyons comment mettre à jours ces données.
+Voyons comment mettre à jour ces données.
 :::
