@@ -68,7 +68,7 @@ Nous allons donc modifier le code permettant de récupérer les données avec le
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // ...
-export default function Playlist() {
+export default function Playlists() {
   // highlight-next-line
   const { playlist } = useLoaderData<typeof loader>();
   //...
@@ -86,7 +86,7 @@ Nous allons maintenant pouvoir afficher les tracks disponibles en récupérant l
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 // ...
-export default function Playlist() {
+export default function Playlists() {
   // highlight-next-line
   const { playlist, availableTracks } = useLoaderData<typeof loader>();
   //...
@@ -101,7 +101,7 @@ Nous pouvons maintenant les afficher.
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
+export default function Playlists() {
   // highlight-next-line
   const { playlist, availableTracks } = useLoaderData<typeof loader>();
 
