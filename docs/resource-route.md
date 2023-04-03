@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Route ressource
 
-Remix permet de colocaliser le code front et back mais parfois on a besoin de créer un endpoint back uniquement. C'est ce qu'on appelle une resource route et avec tout ce que nous avons deja vu, vous savez deja le faire.
+Remix permet de colocaliser le code front et back mais parfois, on a besoin de créer un endpoint back uniquement. C'est ce qu'on appelle une route ressource et avec tout ce que nous avons déjà vu, vous savez déjà le faire.
 
 :::info Exercice  
 Permettre le téléchargement des données d'une playlist au format JSON.
@@ -12,12 +12,12 @@ Permettre le téléchargement des données d'une playlist au format JSON.
 
 ## Guide
 
-💿 **Créer la route resource**
+💿 **Créer la route ressource**
 
-Dans le dossier des routes, nous avons juste à créer un module qui exportera un `loader` pour la route `/api/playlists/:id.json` qui retournera un contenue `json`
+Dans le dossier des routes, nous avons juste à créer un module qui exportera un `loader` pour la route `/api/playlists/:id.json` qui retournera un contenu `json`
 
 :::tip
-Afin de marquer notre contenu comme telechargeable, il faut ajouter le header `"Content-Disposition": 'attachment; filename="${playlist.name}.json"'`
+Afin de marquer notre contenu comme téléchargeable, il faut ajouter le header `"Content-Disposition": 'attachment; filename="${playlist.name}.json"'`
 :::
 
 <details>
@@ -52,7 +52,7 @@ export const loader = async ({ params: { id = "" } }: LoaderArgs) => {
 Dans la page d'affichage d'une playlist, nous allons ajouter un lien pour télécharger les données
 
 :::caution
-Il est imperatif d'utiliser `reloadDocument` sur tous les liens pointants vers une resource route !
+Il est impératif d'utiliser `reloadDocument` sur tous les liens pointant vers une route ressource !
 Sinon Remix traitera le lien comme une UI route et tentera de charger les données avec un `fetch` et de rendre le composant.
 :::
 
@@ -75,5 +75,5 @@ export default function Playlists() {
 
 :::info 👏 Nous savons maintenant comment ajouter des endpoints purement back à notre appli Remix.
 
-Voyons comment gerer l'authentification.
+Voyons comment gérer l'authentification.
 :::

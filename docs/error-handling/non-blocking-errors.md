@@ -126,5 +126,5 @@ export default function Login() {
 
 :::info 👏 Nous pouvons maintenant gérer simplement tous les types d'erreurs dans notre application Remix.
 
-Nous allons maintenant découvrir les resource routes
+Nous allons maintenant découvrir les routes ressource
 :::

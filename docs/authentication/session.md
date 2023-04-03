@@ -4,15 +4,15 @@ sidebar_position: 1
 
 # Session
 
-Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités, est d'utiliser les cookies. Et pour cela Remix met à dispotion un petit helper `createCookieSessionStorage`.
+Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités est d'utiliser les cookies. Et pour cela Remix met à disposition un petit helper `createCookieSessionStorage`.
 
 :::info Exercice
-Créer un session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
+Créer une session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
 :::
 
 ## Guide
 
-💿 ** Créer une nouvelle page avec un formualire **
+💿 ** Créer une nouvelle page avec un formulaire **
 
 <details>
   <summary>Voir une solution</summary>
@@ -110,7 +110,7 @@ export default function Layout() {
 
   return (
     <div>
-      // highlight-next-line
+      {/* highlight-next-line */}
       <div>Je suis {name}</div>
       <Form method="post">
         <label>
@@ -129,7 +129,7 @@ export default function Layout() {
 
 :::info 👏 Vous avez maintenant un état persisté sans JS
 
-Voyons comment utiliser cette mecanique pour gérer l'authentification.
+Voyons comment utiliser cette mécanique pour gérer l'authentification.
 :::
 
 ```

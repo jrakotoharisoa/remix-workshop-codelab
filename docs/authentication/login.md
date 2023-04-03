@@ -7,12 +7,12 @@ sidebar_position: 2
 Maintenant que nous savons persister un état entre différents échanges avec le serveur grâce aux sessions, nous pouvons stocker des informations concernant l'authentification d'un utilisateur
 
 :::info Exercice  
-Créer une page `/login` qui s'affiche lorsque l'on essaie d'éditer une playlist lorsque le user n'est pas connecté (pas de `username` dans la session).
+Créer une page `/login` qui s'affiche lorsque l'on essaie d'éditer une playlist lorsque l'utilisateur n'est pas connecté (pas de `username` dans la session).
 :::
 
 ## Guide
 
-💿 ** Protéger la route d'edition **
+💿 ** Protéger la route d'édition **
 
 Commençons par protéger notre route d'édition de playlist. Pour cela, nous allons modifier le loader pour rediriger l'utilisateur vers `/login?from=/your-current-route` si la session ne contient pas d'information sur l'identité de l'utilisateur.
 
@@ -82,7 +82,7 @@ export default function Login() {
 
 💿 ** Persister le `username` dans la session à la soumission du formulaire **
 
-Quand le mot de passe est correct (ici mot de passe = `devoxx2023`), utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine ( en utilisant le query param `from`) ou la page principale du site.
+Quand le mot de passe est correct (ici mot de passe = `devoxx2023`), utiliser la session pour persister le `username` et rediriger l'utilisateur vers la page d'origine (en utilisant le query param `from`) ou la page principale du site.
 
 <details>
   <summary>Voir une solution</summary>
@@ -178,5 +178,5 @@ export default function Layout() {
 
 :::info 👏 Vous pouvez maintenant connecter un utilisateur
 
-Voyons comment deconnecter un utilisateur.
+Voyons comment déconnecter un utilisateur.
 :::

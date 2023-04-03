@@ -10,7 +10,7 @@ Dans le web, l'utilisation de formulaire `<form />`, et la manière déclarative
 À la soumission de notre formulaire, un appel `POST` sera effectué sur la route associée à notre module.
 
 :::info Exercice
-Envoyer une requête `post` au serveur avec l'`id` de la track à ajouter à la playlist au click sur un bouton situé à côté d'une track.
+Envoyer une requête `post` au serveur avec l'`id` de la track à ajouter à la playlist au clic sur un bouton situé à côté d'une track.
 Le bouton ne sera visible qu'en mode `edition`.
 :::
 

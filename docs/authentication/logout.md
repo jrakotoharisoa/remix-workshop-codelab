@@ -2,19 +2,19 @@
 sidebar_position: 3
 ---
 
-# Deconnexion
+# Déconnexion
 
-Votre utilisateur est connecté mais il faut aussi lui offrir la possibilité de se déconnecter.
+Votre utilisateur est connecté, mais il faut aussi lui offrir la possibilité de se déconnecter.
 
 :::info Exercice
-Supprimer la session au clique sur le bouton déconnexion
+Supprimer la session au clic sur le bouton déconnexion
 :::
 
 ## Guide
 
 💿 ** Supprimer la session **
 
-Dans le cas de la deconnexion pas besoin de front, nous pouvons simplement créer une resource route `app/routes/api.logout.ts` et créer une action qui va detruire la session et rediriger vers la page principale du site
+Dans le cas de la déconnexion, pas besoin de front, nous pouvons simplement créer une route ressource `app/routes/api.logout.ts` et créer une action qui va détruire la session et rediriger vers la page principale du site
 
 <details>
   <summary>Voir une solution</summary>
@@ -32,7 +32,7 @@ export const action = async ({ request }: ActionArgs) => {
 
 </details>
 
-:::info 👏 Vous etes un expert Remix
+:::info 👏 Vous êtes un expert Remix
 
-Ou presque !!! Mais une chose est sure, vous avez maintenant de bonnes bases et on a passé un super moment avec vous.
+Ou presque !!! Mais une chose est sûre, vous avez maintenant de bonnes bases et on a passé un super moment avec vous.
 :::
