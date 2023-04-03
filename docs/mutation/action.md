@@ -30,6 +30,8 @@ export const action = () => {};
 
 La fonction `action` nous expose les mêmes paramètres que la fonction `loader` : `request` et` params`. On va pouvoir ainsi récupérer l'id de la playlist dans les paramètres de l'URL et l'id de la track à ajouter dans le form data de la requête.
 
+L'action recoit les meme données que le loader. Nous pourrons utiliser la methode [`formData()`](https://developer.mozilla.org/en-US/docs/Web/API/Request/formData) de la `request`
+
 <details>
   <summary>Voir une solution</summary>
 
@@ -66,7 +68,7 @@ const FormDataRequestSchema = z.object({
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
   // highlight-next-line
   const rawFormData = await request.formData();
-  const formData = FormDataRequestSchema.parse(rawFormData);
+  const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
 
   // highlight-end
   return null;
@@ -85,7 +87,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
   const rawFormData = await request.formData();
-  const formData = FormDataRequestSchema.parse(rawFormData);
+  const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
   // highlight-next-line
   await playlists.addTrack(id, formData.track_id);
   // highlight-end

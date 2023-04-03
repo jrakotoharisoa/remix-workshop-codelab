@@ -35,7 +35,7 @@ Avec cela, nous allons pouvoir récupérer les tracks disponibles avec la métho
 // highlight-next-line
 const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
 
-export const loader = async ({ params }: LoaderArgs) => {
+export const loader = async ({ request, params }: LoaderArgs) => {
   const id = params.id;
   const playlist = await playlists.find(id || "");
   if (!playlist) {
@@ -109,7 +109,7 @@ export default function Playlists() {
     <div className="flex h-screen flex-col px-6 py-3">
       <h1 className="title-1">{/* Nom de la playlist */}</h1>
       <div>
-        <ul>{/* Liste des track de la playlist */}</ul>
+        {/*...*/}
         // highlight-start
         <ul className="flex-1 overflow-auto">
           {availableTracks.map((track) => (

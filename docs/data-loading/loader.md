@@ -37,7 +37,7 @@ export const loader = () => {
 
 Remix appelle notre fonction `loader` avec différentes données :
 
-- une `request` objet `Request` de l'`API Fetch`
+- une `request` objet [`Request`](https://developer.mozilla.org/fr/docs/Web/API/Request) de l'`API Fetch`
 - les `params` correspondant aux segments dynamiques de l'URL
 - un `context` remix
 
