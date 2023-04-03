@@ -4,10 +4,10 @@ sidebar_position: 2
 
 # Pré-chargement nos pages
 
-Pour minimiser les temps de chargements Remix se chargent d'appeler les différents `loader` d'une page en parallèle. Mais pour tenter de supprimer les différents états de chargement, nous avons également la possibilité de pré charger nos pages, avant même d'y accéder.
+Pour minimiser les temps de chargements Remix se chargent d'appeler les différents `loader` d'une page en parallèle. Mais pour tenter de supprimer les différents états de chargement, nous avons également la possibilité de précharger nos pages, avant même d'y accéder.
 
 :::info Exercice
-Pré charge vos pages au survol des liens situés dans la bar de navigation.
+Précharger nos pages au survol des liens situés dans la barre de navigation.
 :::
 
 ## Guide
@@ -47,12 +47,12 @@ export default function App() {
 
 💿 **Ajouter des headers de cache**
 
-Maintenant que le `loader` est appelé avant l'affichage de la page, il faut maintenant ajouter des `headers` de cache. Cela va permettre que lors de la navigation sur la page, l'appel du loader se servent de la réponse mis en cache lors de pré-chargement.
+Maintenant que le `loader` est appelé avant l'affichage de la page, il faut maintenant ajouter des `headers` de cache. Lors de la navigation sur la page, cela va permettre que l'appel du loader se serve de la réponse mise en cache lors de pré-chargement.
 
-Pour cela nous allons ajouter le header de cache suivant à la réponse du loader:
+Pour cela, nous allons ajouter le header de cache suivant à la réponse du loader:
 
 - `private` pour cacher uniquement dans le navigateur
-- `max-age=10` pour une cache valide de 10secs
+- `max-age=10` pour une cache valide de 10 secs
 
 <details>
   <summary>Voir une solution</summary>
@@ -77,5 +77,5 @@ export const loader = async ({ params }: LoaderArgs) => {
 
 :::info 👏 Vos pages s'affiche maintenant plus rapidement.
 
-Voyons maintenant comment améliorer temps d'intéraction lors de la mutation de vos données avec de l'`optimitic UI`.
+Voyons maintenant comment améliorer temps d'interaction lors de la mutation de vos données avec de l'`optimitic UI`.
 :::

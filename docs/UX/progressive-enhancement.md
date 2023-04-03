@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Progressive enhancement
 
-Jusqu'ici nous avons une application fonctionnel, qui marche sans execution de Javascript dans le navigateur. Mais le Javascript nous permet lorsqu'il est chargé de fournir une meilleure expérience aux utilisateurs. Notamment, en évitant le rechargement complet d'une page lors d'une navigation ou lors de la soumission d'une formulaire.
+Jusqu'ici, nous avons une application fonctionnelle, qui marche sans exécution de Javascript dans le navigateur. Mais le Javascript nous permet lorsqu'il est chargé de fournir une meilleure expérience aux utilisateurs. Notamment, en évitant le rechargement complet d'une page lors d'une navigation ou lors de la soumission d'un formulaire.
 
 :::info Exercice
 Inclure les scripts Javascript dans vos pages.
@@ -14,9 +14,9 @@ Inclure les scripts Javascript dans vos pages.
 
 💿 ** Ajouter le composant `<Scripts />` **
 
-Pour inclure, les scripts Javascript dans vos pages, il suffit inclure le composant `<Scripts />` que Remix nous fournis dans le ficheir `root.tsx` de l'application.
+Pour inclure, les scripts Javascript dans vos pages, il suffit inclure le composant `<Scripts />` que Remix nous fournit dans le fichier `root.tsx` de l'application.
 
-Ce composant va permettre inclure le code client Javascript généré lors de la phase de compiliation.
+Ce composant va permettre inclure le code client Javascript généré lors de la phase de compilation.
 
 :::tip En savoir plus
 Voir la section [Scripts](https://remix.run/docs/en/1.14.3/components/scripts) dans la doc.
