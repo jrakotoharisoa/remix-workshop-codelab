@@ -30,7 +30,8 @@ export default function Login() {
           <p>Authentification</p>
         </div>
         <label>
-          Mot de passe: <input type="password" name="password" className="border-2" />
+          Mot de passe:{" "}
+          <input type="password" name="password" className="border-2" />
         </label>
 
         <button type="submit">Se connecter</button>
@@ -56,10 +57,12 @@ const LoginRequestSchema = z.object({
 
 type FormError = { errors: { username?: string[]; password?: string[] } };
 export const action = async ({ request }: ActionArgs) => {
-  const formData = await request.formData();
-  const parsedResult = LoginRequestSchema.safeParse(Object.fromEntries(formData));
+  const formData = Object.fromEntries(await request.formData());
+  const parsedResult = LoginRequestSchema.safeParse(formData);
   if (!parsedResult.success) {
-    return json<FormError>({ errors: parsedResult.error.formErrors.fieldErrors });
+    return json<FormError>({
+      errors: parsedResult.error.formErrors.fieldErrors,
+    });
   }
 
   const { password } = parsedResult.data;
@@ -94,14 +97,26 @@ export default function Login() {
         <label>
           Mot de passe:
           {/* highlight-next-line */}
-          <input type="password" name="password" className={twMerge("border-2", data?.errors.password && "border-rose-500")} />
+          <input
+            type="password"
+            name="password"
+            className={twMerge(
+              "border-2",
+              data?.errors.password && "border-rose-500"
+            )}
+          />
         </label>
 
         <button type="submit">Se connecter</button>
       </Form>
 
       {/* highlight-next-line */}
-      {data ? <div>Resultat : {Object.keys(data.errors).length === 0 ? "succès" : "echec"}</div> : null}
+      {data ? (
+        <div>
+          Resultat :{" "}
+          {Object.keys(data.errors).length === 0 ? "succès" : "echec"}
+        </div>
+      ) : null}
     </div>
   );
 }

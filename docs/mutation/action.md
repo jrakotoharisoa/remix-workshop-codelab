@@ -67,9 +67,9 @@ const FormDataRequestSchema = z.object({
 // highlight-end
 
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
-  const rawFormData = await request.formData();
+  const rawFormData = Object.fromEntries(await request.formData());
   // highlight-next-line
-  const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
+  const formData = FormDataRequestSchema.parse(rawFormData);
 
   return null;
 };
@@ -86,8 +86,8 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
-  const rawFormData = await request.formData();
-  const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
+  const rawFormData = Object.fromEntries(await request.formData());
+  const formData = FormDataRequestSchema.parse(rawFormData);
   // highlight-next-line
   await playlists.addTrack(id, formData.track_id);
   // highlight-end

@@ -61,7 +61,14 @@ export default function Login() {
         {/* highlight-end */}
         <label>
           Mot de passe:{" "}
-          <input type="password" name="password" className={twMerge("border-2", data?.errors.password && "border-rose-500")} />
+          <input
+            type="password"
+            name="password"
+            className={twMerge(
+              "border-2",
+              data?.errors.password && "border-rose-500"
+            )}
+          />
         </label>
 
         <button type="submit">Se connecter</button>
@@ -93,12 +100,14 @@ const LoginRequestSchema = z.object({
 
 type FormError = { errors: { username?: string[]; password?: string[] } };
 export const action = async ({ request }: ActionArgs) => {
-  const formData = await request.formData();
+  const formData = Object.fromEntries(await request.formData());
   const url = new URL(request.url);
   const userSession = await getSession(request.headers.get("Cookie"));
-  const parsedResult = LoginRequestSchema.safeParse(Object.fromEntries(formData));
+  const parsedResult = LoginRequestSchema.safeParse(formData);
   if (!parsedResult.success) {
-    return json<FormError>({ errors: parsedResult.error.formErrors.fieldErrors });
+    return json<FormError>({
+      errors: parsedResult.error.formErrors.fieldErrors,
+    });
   }
 
   const { username, password } = parsedResult.data;
@@ -153,7 +162,9 @@ export default function Layout() {
             <span>Remix</span>
           </p>
           // highlight-next-line
-          <p className="flex items-center space-x-2">status: {isLogged ? "connecté" : "deconnecté"}</p>
+          <p className="flex items-center space-x-2">
+            status: {isLogged ? "connecté" : "deconnecté"}
+          </p>
         </div>
         ...
       </aside>

@@ -83,8 +83,8 @@ Nous allons maintenant pouvoir modifier l'`action` pour retirer la track corresp
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
-  const rawFormData = await request.formData();
-  const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
+  const rawFormData = Object.fromEntries(await request.formData());
+  const formData = FormDataRequestSchema.parse(rawFormData);
   // highlight-next-line
   if (formData.action === "delete") {
     await playlists.removeTrack(id, formData.track_id);
