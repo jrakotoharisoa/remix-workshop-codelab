@@ -21,7 +21,7 @@ Pour cela, nous allons utiliser les segments d'URL optionnels.
 
 💿 **Modifier de l'URL**
 
-Pour créer un segement d'URL optionnel, il suffit de mettre en paranthèse dans le nom du fichier la partie optionnel.
+Pour créer un segment d'URL optionnel, il suffit de mettre en parenthèse dans le nom du fichier la partie optionnel.
 
 :::tip En savoir plus
 Voir la section [Optional segments](https://remix.run/docs/en/1.14.3/file-conventions/route-files-v2#optional-segments) dans la doc.
@@ -31,7 +31,7 @@ Ainsi en renommant notre module route en `_layout.playlists.$id.(edit).tsx`, not
 
 💿 **Identifier le mode `edition`**
 
-Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page. Avec ce `pathname` nous allons pouvoir vérifier si l'url se termine par `edit` pour savoir si nous sommes en mode edition.
+Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page. Avec ce `pathname` nous allons pouvoir vérifier si l'url se termine par `edit` pour savoir si nous sommes en mode édition.
 
 <details>
   <summary>Voir une solution</summary>
@@ -54,7 +54,7 @@ export default function Playlist() {
 
 💿 **Ajouter les liens pour naviguer entre le mode `edition` et le mode `lecture`**
 
-Nous allons ici utiliser le composant `<Link to={...} />` qui rendre une balise `<a />`. Ce composant nous permet de définir des liens relatif.
+Nous allons ici utiliser le composant `<Link to={...} />` qui rendre une balise `<a />`. Ce composant nous permet de définir des liens relatifs.
 
 :::tip
 `./` permet de définir l'url courante. Ainsi `./suffix` permet d'ajouter le segment `suffix` à l'url courante.
@@ -78,7 +78,7 @@ export default function Playlist() {
 
 </details>
 
-:::info 👏 Vous avez maintenant une page de détails de playlist permettant d'avoir un mode edition.
+:::info 👏 Vous avez maintenant une page de détails de playlist permettant d'avoir un mode édition.
 
 Voyons comment afficher des données spécifiques à une playlist.
 :::
