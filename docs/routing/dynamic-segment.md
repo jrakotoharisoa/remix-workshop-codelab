@@ -21,7 +21,7 @@ Les segments dynamiques nous permettent de faire correspondre des segments de l'
 Voir la section [Dynamic segments](https://remix.run/docs/en/1.14.1/file-conventions/route-files-v2#md-dynamic-segments) dans la doc.
 :::
 
-Ainsi en renommant notre module route en `playlists.$id.tsx`, notre page sera associée à toutes les urls correspondantes à `/playlists/{id}`. Nous verrons par la suite comment récupérer la valeur de `id`.
+Ainsi en renommant notre module route en `_layout.playlists.$id.tsx`, notre page sera associée à toutes les urls correspondantes à `/playlists/{id}`. Nous verrons par la suite comment récupérer la valeur de `id`.
 
 :::info 👏 Vous avez maintenant une page permettant d'afficher le détails d'une playlist.
 
