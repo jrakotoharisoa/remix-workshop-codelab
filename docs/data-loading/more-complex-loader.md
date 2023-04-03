@@ -16,23 +16,17 @@ Pour cela vous pouvez vous aider de la méthode `findAvailableTracksNotIn` dans 
 
 💿 **Identifier le mode `edition`**
 
-Pour savoir si nous sommes en mode `edition`, nous allons regarder sur le `pathname` de l'URL se termine par `/edit`.
-
-Pour pouvoir manipuler l'URL, nous allons créer une `URL` à partir de la propriété `url` de la request:
+Pour pouvoir récuperer le `pathname` nous allons créer une `URL` à partir de la propriété `url` de la `request` que l'on récupére dans les paramètres de la fonction `loader` :
 
 ```tsx
 const url = new URL(request.url);
 ```
 
-Nous allons ensuite créer une petite fonction nous permettant de savoir si nous sommes en mode `edition`
-
-```tsx
-const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
-```
+Nous allons ensuite pouvoir réutiliser notre fonction `isEditionUrl`.
 
 💿 **Ajouter les tracks disponibles dans la réponse du `loader`**
 
-Avec cela, nous allons pouvoir récupérer les tracks disponibles avec la méthode `findAvailableTracksNotIn` lorsque nous sommes en mode `edition` pour le retourner dans la réponse.
+Avec cela, nous allons pouvoir récupérer les tracks disponibles avec la méthode `findAvailableTracksNotIn` du repository `tracks` lorsque nous sommes en mode `edition` pour le retourner dans la réponse.
 
 <details>
   <summary>Voir une solution</summary>

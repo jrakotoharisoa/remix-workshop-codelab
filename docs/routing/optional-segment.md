@@ -11,9 +11,9 @@ Pour cela, nous allons utiliser les segments d'URL optionnels.
 :::info Exercice
 1- Modifier le nom du fichier, pour que l'URL du fichier puisse matcher les routes `/playlists/{id}` et `/playlists/{id}/edit`.
 
-2- Ajouter un bouton sur la page `/playlists/{id}` permettant de passer en mode `edition` en naviguant vers `/playlists/{id}/edit`.
+2- Ajouter un lien sur la page `/playlists/{id}` permettant de passer en mode `edition` en naviguant vers `/playlists/{id}/edit`.
 
-3- Ajouter un bouton sur la page `/playlists/{id}/edit` permettant de revenir en mode `lecture` en naviguant vers `/playlists/{id}`.
+3- Ajouter un lien sur la page `/playlists/{id}/edit` permettant de revenir en mode `lecture` en naviguant vers `/playlists/{id}`.
 
 :::
 
@@ -28,6 +28,55 @@ Voir la section [Optional segments](https://remix.run/docs/en/1.14.3/file-conven
 :::
 
 Ainsi en renommant notre module route en `_layout.playlists.$id.(edit).tsx`, notre page sera associée à toutes les URLs correspondantes à `/playlists/{id}` et `/playlists/{id}/edit`. Nous verrons par la suite comment récupérer la valeur de `id`.
+
+💿 **Identifier le mode `edition`**
+
+Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page. Avec ce `pathname` nous allons pouvoir vérifier si l'url se termine par `edit` pour savoir si nous sommes en mode edition.
+
+<details>
+  <summary>Voir une solution</summary>
+
+```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
+
+const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
+
+export default function Playlist() {
+  const location = useLocation();
+  const isEditionMode = isEditionUrl(location.pathname);
+  //...
+  return (
+    //...
+  );
+}
+```
+
+</details>
+
+💿 **Ajouter les liens pour naviguer entre le mode `edition` et le mode `lecture`**
+
+Nous allons ici utiliser le composant `<Link to={...} />` qui rendre une balise `<a />`. Ce composant nous permet de définir des liens relatif.
+
+:::tip
+`./` permet de définir l'url courante. Ainsi `./suffix` permet d'ajouter le segment `suffix` à l'url courante.
+:::
+
+<details>
+  <summary>Voir une solution</summary>
+
+```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
+
+
+export default function Playlist() {
+  const location = useLocation();
+  const isEditionMode = isEditionUrl(location.pathname);
+  //...
+  return (
+    {isEditionMode ? <Link to="./edit" >Edit</Link> : <Link to="./..">Done</Link>}
+  );
+}
+```
+
+</details>
 
 :::info 👏 Vous avez maintenant une page de détails de playlist permettant d'avoir un mode edition.
 

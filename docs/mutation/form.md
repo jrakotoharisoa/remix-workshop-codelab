@@ -16,26 +16,6 @@ Le bouton ne sera visible qu'en mode `edition`.
 
 ## Guide
 
-💿 **Identifier le mode `edition`**
-
-Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la page afin de réutiliser notre fonction utilitaire `isEditionUrl` pour savoir si nous sommes en mode `edition`.
-
-<details>
-  <summary>Voir une solution</summary>
-
-```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
-  const location = useLocation();
-  const isEditionMode = isEditionUrl(location.pathname);
-  //...
-  return (
-    //...
-  );
-}
-```
-
-</details>
-
 💿 **Ajouter un formulaire**
 
 Nous allons donc ajouter un formulaire avec une méthode `post`.  
