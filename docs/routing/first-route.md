@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # La première page
 
-Commençons par créer notre première page avec du contenu static.
+Commençons par créer notre première page avec du contenu statique.
 
 :::info Exercice
 Créer une page accessible via l'url `/ma-premiere-page` avec le contenu **"Ma première page"**
