@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Formulaire multiple
 
-Nous allons maintenant permettre à notre route de gérer plusieurs actions: `ajout` et `suppression`.
+Nous allons maintenant permettre à notre route de gérer plusieurs actions : `ajout` et `suppression`.
 
 :::info Exercice
 Modifier le module route pour permettre de retirer une track d'une playlist.
@@ -14,15 +14,15 @@ Modifier le module route pour permettre de retirer une track d'une playlist.
 
 💿 **Ajouter un formulaire**
 
-Nous allons donc ajouter un formulaire avec un methode `post` sur chaque ligne correspond à la track d'une playlist.
+Nous allons donc ajouter un formulaire avec une méthode `post` sur chaque ligne correspond à la track d'une playlist.
 
-Le formulaire aura:
+Le formulaire aura :
 
-- un `input` de type `hidden` permettant d'envoyer l'information `track_id` correspondant à l'id de la track à ajouter.
-- un bouton `submit` avec le name `action` et la valeur `delete`
+- Un `input` de type `hidden` permettant d'envoyer l'information `track_id` correspondant à l'id de la track à ajouter.
+- Un bouton `submit` avec le name `action` et la valeur `delete`
 
 :::tip
-L'ajout d'une nom et d'une valeur au bouton submit va nous permettre d'identifier dans l'action quel bouton submit a été cliqué, pour savoir quelle modification effectuer.
+L'ajout d'un nom et d'une valeur au bouton submit va nous permettre d'identifier dans l'action quel bouton submit a été cliqué pour savoir quelle modification effectuer.
 
 :::
 
@@ -55,7 +55,7 @@ export default function Playlist() {
 
 💿 **Mettre à jour le schéma `Zod`**
 
-Nous allons mettons mettre à jour notre schema Zod pour s'assurer de la validité de notre requête.
+Nous allons mettons mettre à jour notre schéma Zod pour s'assurer de la validité de notre requête.
 
 <details>
   <summary>Voir une solution</summary>
@@ -98,7 +98,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 </details>
 
-:::info 👏 Nous pouvons maintenant modifier nos playlist en y ajoutant et supprimant des tracks.
+:::info 👏 Nous pouvons maintenant modifier nos playlists en y ajoutant et supprimant des tracks.
 
-Entre nous, l'expérience utilisatuer n'est pas forcément très fluide. Voyons maintenant comment l'améliorer
+Entre nous, l'expérience utilisateur n'est pas forcément très fluide. Voyons maintenant comment l'améliorer
 :::

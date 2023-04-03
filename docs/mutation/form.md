@@ -10,8 +10,8 @@ Dans le web, l'utilisation de formulaire `<form />`, et la manière déclarative
 À la soumission de notre formulaire, un appel `POST` sera effectué sur la route associée à notre module.
 
 :::info Exercice
-Envoyer un requête `post` au serveur avec l'`id` de la track à ajouter à la playlist au click sur un bouton situé à coté d'une track.
-Le bouton ne sera visible que en mode `edition`.
+Envoyer une requête `post` au serveur avec l'`id` de la track à ajouter à la playlist au click sur un bouton situé à côté d'une track.
+Le bouton ne sera visible qu'en mode `edition`.
 :::
 
 ## Guide
@@ -38,14 +38,14 @@ export default function Playlist() {
 
 💿 **Ajouter un formulaire**
 
-Nous allons donc ajouter un formulaire avec un methode `post`.  
-Le formulaire aura:
+Nous allons donc ajouter un formulaire avec une méthode `post`.  
+Le formulaire aura :
 
-- un `input` de type `hidden` permettant d'envoyer l'information `track_id` correspondant à l'id de la track à ajouter.
-- un bouton `submit`
+- Un `input` de type `hidden` permettant d'envoyer l'information `track_id` correspondant à l'id de la track à ajouter.
+- Un bouton `submit`
 
 :::tip
-Nous utilisons ici le composant `<Form />` de Remix à la place de la balise `form` classique. Cela permet:
+Nous utilisons ici le composant `<Form />` de Remix à la place de la balise `form` classique. Cela permet :
 
 - De sérialiser les données de la même façon avec ou sans Javascript
 - D'avoir une expérience améliorer lorsque le Javascript est chargé. Cela, en rappelant les loaders automatiquement à la soumission du formulaire pour garder un UI à jour sans rechargement de page
@@ -81,7 +81,7 @@ export default function Playlist() {
 
 </details>
 
-:::info 👏 Notre page est maintenant capable d'envoyer des requête de mutation à notre serveur.
+:::info 👏 Notre page est maintenant capable d'envoyer des requêtes de mutation à notre serveur.
 
 Voyons traiter ces requêtes.
 :::

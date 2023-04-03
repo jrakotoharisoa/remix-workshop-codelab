@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Traitement des requêtes de mutations
 
-Lorsqu'une requête de mutation est effectué (méthodes `POST`, `PATCH`, `PUT` ou `DELETE`) sur notre route, la fonction `action` est appelé. Cette fonction est exécutée côté serveur uniquement.
+Lorsqu'une requête de mutation est effectuée (méthodes `POST`, `PATCH`, `PUT` ou `DELETE`) sur notre route, la fonction `action` est appelé. Cette fonction est exécutée côté serveur uniquement.
 
 Nous allons maintenant permettre la modification des playlists en traitant ces requêtes de mutation.
 
@@ -46,7 +46,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 💿 **Valider les données soumises**
 
-Pour s'assurer que les données soumises sont valides nous allons utiliser la librairie `zod`. Cette librairie nous permet de définir la structure d'une objet et de valider au runtime cette structure.
+Pour s'assurer que les données soumises sont valides, nous allons utiliser la librairie `zod`. Cette librairie nous permet de définir la structure d'un objet et de valider au runtime cette structure.
 
 Cela nous permet en plus de la validation d'avoir par la suite des données correctement typées.
 
@@ -91,7 +91,7 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 
 </details>
 
-:::info 👏 Nous pouvons maintenant modifier nos playlist en y ajoutant des tracks.
+:::info 👏 Nous pouvons maintenant modifier nos playlists en y ajoutant des tracks.
 
 Ajoutons maintenant la possibilité de retirer des tracks de la playlist.
 :::
