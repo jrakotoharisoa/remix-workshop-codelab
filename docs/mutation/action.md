@@ -64,13 +64,13 @@ Voir la docs de [Zod](https://zod.dev/).
 const FormDataRequestSchema = z.object({
   track_id: z.string(),
 });
+// highlight-end
 
 export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
-  // highlight-next-line
   const rawFormData = await request.formData();
+  // highlight-next-line
   const formData = FormDataRequestSchema.parse(Object.fromEntries(rawFormData));
 
-  // highlight-end
   return null;
 };
 ```

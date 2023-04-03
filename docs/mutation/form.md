@@ -46,13 +46,12 @@ export default function Playlists() {
     //...
     <li>
       {/*...*/}
-
-      {isEditionMode && (
-        <Form method="post" className="inline">
-          <input name="track_id" type="hidden" value={track.id} />
-          <button type="submit">Add</button>
-        </Form>
-      )}
+      //highlight-start
+      <Form method="post" className="inline">
+        <input name="track_id" type="hidden" value={track.id} />
+        <button type="submit">Add</button>
+      </Form>
+      //highlight-end
     </li>
     //...
   );
