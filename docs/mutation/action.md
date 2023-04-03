@@ -53,7 +53,7 @@ Pour s'assurer que les données soumises sont valides, nous allons utiliser la l
 Cela nous permet en plus de la validation d'avoir par la suite des données correctement typées.
 
 :::tip
-Voir la docs de [Zod](https://zod.dev/).
+Pour en savoir plus sur Zod [voir la docs](https://zod.dev/).
 :::
 
 <details>
