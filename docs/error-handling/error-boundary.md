@@ -37,7 +37,7 @@ export const ErrorBoundary = () => {
 
 💿 **Lever une erreur**
 
-Nous allons ajouter une erreur lorsqu'un mauvais id de playlist est passé dans l'URL.
+Si ce n'est pas déjà fait, nous allons ajouter une erreur lorsqu'un mauvais id de playlist est passé dans l'URL.
 
 <details>
   <summary>Voir une solution</summary>
