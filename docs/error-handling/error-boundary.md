@@ -11,9 +11,9 @@ Remix utilisera ce composant pour rendre la page à la place du composant export
 :::info Exercice  
 1- Attraper toutes les erreurs dans notre layout racine  
 2- Attraper des erreurs dans des routes imbriquées  
-3- Gerer les codes HTTP  
-4- Recuperer le code HTTP dans l'erreur  
-5- Deleguer certaines erreurs
+3- Gérer les codes HTTP  
+4- Récupérer le code HTTP dans l'erreur  
+5- Déléguer certaines erreurs
 :::
 
 ## Guide
@@ -61,7 +61,7 @@ Nous pouvons visualiser l'erreur [http://localhost:3000/playlists/cet-id-n-exist
 
 💿 ** Attraper des erreurs dans des routes imbriquées **
 
-Afin de conserver une partie de notre interface nous pouvons attraper les erreurs aux plus proche de l'endroit où elles sont generées.
+Afin de conserver une partie de notre interface, nous pouvons attraper les erreurs au plus proche de l'endroit où elles sont générées.
 
 <details>
   <summary>Voir une solution</summary>
@@ -78,9 +78,9 @@ export const ErrorBoundary = () => {
 
 Nous pouvons visualiser l'erreur http://localhost:3000/playlists/cet-id-n-existe-pas et voir qu'une partie de layout est toujours visible
 
-💿 ** Gerer les codes HTTP **
+💿 ** Gérer les codes HTTP **
 
-Nous venons de lancer une erreur dans le cas ou l'identifiant de la playlist n'est pas correct et cela pose quelques soucis de semantique car le serveur renvoie une reponse HTTP en 500 alors qu'une 404 serait plus correct. Pour faire cela il suffit de `throw` une `Response` plutot qu'une `Error`
+Nous venons de lancer une erreur dans le cas ou l'identifiant de la playlist n'est pas correct et cela pose quelques soucis de sémantique, car le serveur renvoie une réponse HTTP en 500 alors qu'une 404 serait plus correct. Pour faire cela, il suffit de `throw` une `Response` plutôt qu'une `Error`
 
 <details>
   <summary>Voir une solution</summary>
@@ -103,11 +103,11 @@ export const loader = async ({ request, params: { id = "" } }: LoaderArgs) => {
 
 </details>
 
-Nous pouvons voir qu'il n'y a pas de changement dans le rendu de l'erreur [http://localhost:3000/playlists/cet-id-n-existe-pas](http://localhost:3000/playlists/cet-id-n-existe-pas). En regardant les appels reseau on a maintenant notre application qui renvoie le bon code HTTP.
+Nous pouvons voir qu'il n'y a pas de changement dans le rendu de l'erreur [http://localhost:3000/playlists/cet-id-n-existe-pas](http://localhost:3000/playlists/cet-id-n-existe-pas). En regardant les appels réseau, on a maintenant notre application qui renvoie le bon code HTTP.
 
-💿 ** Recuperer le code HTTP dans l'erreur **
+💿 ** Récupérer le code HTTP dans l'erreur **
 
-Dans notre composant `ErrorBoundary`, il est possible d'utiliser la fonction `isRouteErrorResponse`. En lui passant l'erreur, cette methode nous renvoie un boolean si l'erreur etait une `Response`.
+Dans notre composant `ErrorBoundary`, il est possible d'utiliser la fonction `isRouteErrorResponse`. En lui passant l'erreur, cette méthode nous renvoie un booléen si l'erreur était une `Response`.
 
 Dans le cas d'un identifiant de playlist inconnu, nous allons afficher le status HTTP ainsi que le message associé.
 
@@ -135,11 +135,11 @@ export const ErrorBoundary = () => {
 
 </details>
 
-💿 ** Deleguer certaines erreurs **
+💿 ** Déléguer certaines erreurs **
 
-Dans notre composant `ErrorBoundary` d'une route imbriquée, il peut arriver que nous ne voulions pas gerer un certain type d'erreur à ce niveau. Il est alors possible de relancer l'erreur pour qu'elle soit attrapée par un parent
+Dans notre composant `ErrorBoundary` d'une route imbriquée, il peut arriver que nous ne voulions pas gérer un certain type d'erreur à ce niveau. Il est alors possible de relancer l'erreur pour qu'elle soit attrapée par un parent
 
-Dans le cas d'un identifiant de playlist inconnu, nous affichons le status et le message. Modifier le code pour deleguer les erreurs imprevus au composant `ErrorBoundary` racine
+Dans le cas d'un identifiant de playlist inconnu, nous affichons le status et le message. Modifier le code pour déléguer les erreurs imprévues au composant `ErrorBoundary` racine
 
 <details>
   <summary>Voir une solution</summary>
@@ -166,10 +166,10 @@ export const ErrorBoundary = () => {
 </details>
 
 :::tip
-En regle generale, on prefere `throw` des `Response` pour tous les cas d'erreurs anticipées, qui sorte du chemin principal, notre applications. Ce qui laisse les `Error` uniquement pour de l'imprevu.
+En règle générale, on préfère `throw` des `Response` pour tous les cas d'erreurs anticipées, qui sorte du chemin principal, de notre application. Ce qui laisse les `Error` uniquement pour de l'imprévu.
 :::
 
-:::info 👏 Nous pouvons maintenant facilement gerer un rendu pour les erreurs qui sortent du chemin principal de notre application.
+:::info 👏 Nous pouvons maintenant facilement gérer un rendu pour les erreurs qui sortent du chemin principal de notre application.
 
-Nous allons maintenant gerer des erreurs liées au rendu de notre composant par default tel que des erreurs de champs de formulaire.
+Nous allons maintenant gérer des erreurs liées au rendu de notre composant par défaut tel que des erreurs de champs de formulaire.
 :::

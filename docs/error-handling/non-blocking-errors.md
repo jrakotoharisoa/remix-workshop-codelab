@@ -4,17 +4,17 @@ sidebar_position: 2
 
 # Erreurs visibles
 
-Les erreurs visibles sont les erreurs que l'on pourra materialiser dans notre interface tel que des champs de formulaire en erreur. Ici pas de magie,nous allons simplement renvoyer de la donnée representant un etat d'erreur depuis notre `action` ou `loader`.
+Les erreurs visibles sont les erreurs que l'on pourra matérialiser dans notre interface tel que des champs de formulaire en erreur. Ici pas de magie, nous allons simplement renvoyer de la donnée représentant un état d'erreur depuis notre `action` ou `loader`.
 
 :::info Exercice  
-1- Créer une nouvelle page avec un formualire  
+1- Créer une nouvelle page avec un formulaire  
 2- Renvoyer de la donnée en cas d'erreur  
-3- Afficher un liseret rouge autour du champ en erreur
+3- Afficher un liseré rouge autour du champ en erreur
 :::
 
 ## Guide
 
-💿 ** Créer une nouvelle page avec un formualire **
+💿 ** Créer une nouvelle page avec un formulaire **
 
 Nous allons créer une page de login avec un champ `password`
 
@@ -44,7 +44,7 @@ export default function Login() {
 
 💿 ** Renvoyer de la donnée en cas d'erreur **
 
-Nous allons ajouter une `action` qui renvera de la donnée representant l'etat de la validation du `password`. Notre action doit renvoyer une erreur si le mot de passe est differents de `devoxx2023`
+Nous allons ajouter une `action` qui renverra de la donnée représentant l'état de la validation du `password`. Notre action doit renvoyer une erreur si le mot de passe est différents de `devoxx2023`
 
 <details>
   <summary>Voir une solution</summary>
@@ -73,9 +73,9 @@ export const action = async ({ request }: ActionArgs) => {
 
 </details>
 
-💿 ** Afficher un liseret rouge autour du champ en erreur **
+💿 ** Afficher un liseré rouge autour du champ en erreur **
 
-Nous allons créer une page de login avec un champ `password` et afficher un message en cas de succès ou d'echec
+Nous allons créer une page de login avec un champ `password` et afficher un message en cas de succès ou d'échec
 
 <details>
   <summary>Voir une solution</summary>
@@ -109,7 +109,7 @@ export default function Login() {
 
 </details>
 
-:::info 👏 Nous pouvons maintenant gerer simplement tous les types d'erreurs dans notre application Remix.
+:::info 👏 Nous pouvons maintenant gérer simplement tous les types d'erreurs dans notre application Remix.
 
-Nous allons maintenant decouvrir les resource routes
+Nous allons maintenant découvrir les resource routes
 :::

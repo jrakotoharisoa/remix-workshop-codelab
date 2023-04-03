@@ -29,7 +29,7 @@ export const links = () => {
 
 </details>
 
-💿 **Créer un feuille de style dans le dossier `styles` et ajouter votre code CSS**
+💿 **Créer une feuille de style dans le dossier `styles` et ajouter votre code CSS**
 
 <details>
   <summary>Voir une solution</summary>
@@ -44,9 +44,9 @@ body {
 
 💿 **Ajouter un html link descriptor permettant d'ajouter une feuille de style**
 
-Cette fonction retourner un tableau de `HTMLlinkDescriptor` ([Voir docs MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)) ou des `PageLinkDescriptor`.
+Cette fonction retourne un tableau de `HTMLlinkDescriptor` ([Voir docs MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)) ou des `PageLinkDescriptor`.
 
-Ici nous allons utiliser un `HTMLLinkDescriptor` pour qu'une base `<link />` soit ajouter dans notre page pour charger notre feuille de style.
+Ici, nous allons utiliser un `HTMLLinkDescriptor` pour qu'une base `<link />` soit ajouter dans notre page pour charger notre feuille de style.
 
 <details>
   <summary>Voir une solution</summary>

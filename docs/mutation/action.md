@@ -30,7 +30,7 @@ export const action = () => {};
 
 La fonction `action` nous expose les mêmes paramètres que la fonction `loader` : `request` et` params`. On va pouvoir ainsi récupérer l'id de la playlist dans les paramètres de l'URL et l'id de la track à ajouter dans le form data de la requête.
 
-L'action recoit les meme données que le loader. Nous pourrons utiliser la methode [`formData()`](https://developer.mozilla.org/en-US/docs/Web/API/Request/formData) de la `request`
+Nous pourrons utiliser la methode [`formData()`](https://developer.mozilla.org/en-US/docs/Web/API/Request/formData) de la `request`
 
 <details>
   <summary>Voir une solution</summary>
