@@ -40,7 +40,7 @@ Voir la section [Form](https://remix.run/docs/en/1.14.3/components/form) dans la
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
+export default function Playlists() {
   //...
   return (
     //...
@@ -63,5 +63,7 @@ export default function Playlist() {
 
 :::info 👏 Notre page est maintenant capable d'envoyer des requêtes de mutation à notre serveur.
 
-Voyons traiter ces requêtes.
+Si l'on essaie de soumettre notre formulaire, nous avons maintenant une erreurs car notre requête n'est pas traité par le serveur.
+
+Voyons comment traiter cette requête côté.
 :::

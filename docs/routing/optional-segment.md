@@ -40,7 +40,7 @@ Nous allons utiliser le hook `useLocation` pour avoir accès au pathname de la p
 
 const isEditionUrl = (pathname: string) => pathname.endsWith("/edit");
 
-export default function Playlist() {
+export default function Playlists() {
   const location = useLocation();
   const isEditionMode = isEditionUrl(location.pathname);
   //...
@@ -66,7 +66,7 @@ Nous allons ici utiliser le composant `<Link to={...} />` qui rendre une balise 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 
 
-export default function Playlist() {
+export default function Playlists() {
   const location = useLocation();
   const isEditionMode = isEditionUrl(location.pathname);
   //...

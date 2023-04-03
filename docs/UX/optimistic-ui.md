@@ -30,10 +30,12 @@ Nous pouvons réutiliser le schéma Zod `FormDataRequestSchema` pour avoir une d
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
+export default function Playlists() {
   //..
   const navigation = useNavigation();
-  const formData = navigation.formData ? FormDataRequestSchema.parse(Object.fromEntries(navigation.formData)) : undefined;
+  const formData = navigation.formData
+    ? FormDataRequestSchema.parse(Object.fromEntries(navigation.formData))
+    : undefined;
   //...
 }
 ```
@@ -48,25 +50,36 @@ Nous allons maintenant pouvoir reconstruire, en fonction de l'`action` et de la 
     <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
-  const { playlist: serverPlaylist, availableTracks: serverAvailableTracks } = useLoaderData<typeof loader>();
+export default function Playlists() {
+  const { playlist: serverPlaylist, availableTracks: serverAvailableTracks } =
+    useLoaderData<typeof loader>();
   //...
   const playlist = formData
     ? formData.action === "add"
       ? {
           ...serverPlaylist,
-          tracks: [serverAvailableTracks.find((track) => track.id === formData.track_id), ...serverPlaylist.tracks].filter(isNonUndefined),
+          tracks: [
+            serverAvailableTracks.find(
+              (track) => track.id === formData.track_id
+            ),
+            ...serverPlaylist.tracks,
+          ].filter(isNonUndefined),
         }
       : {
           ...serverPlaylist,
-          tracks: serverPlaylist.tracks.filter((track) => track.id !== formData.track_id),
+          tracks: serverPlaylist.tracks.filter(
+            (track) => track.id !== formData.track_id
+          ),
         }
     : serverPlaylist;
 
   const availableTracks = formData
     ? formData.action === "add"
       ? serverAvailableTracks.filter((track) => track.id !== formData.track_id)
-      : [serverPlaylist.tracks.find((track) => track.id === formData.track_id), ...serverAvailableTracks].filter(isNonUndefined)
+      : [
+          serverPlaylist.tracks.find((track) => track.id === formData.track_id),
+          ...serverAvailableTracks,
+        ].filter(isNonUndefined)
     : serverAvailableTracks;
 
   //...

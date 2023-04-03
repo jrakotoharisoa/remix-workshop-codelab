@@ -28,7 +28,7 @@ export const action = () => {};
 
 💿 **Récupérer des données soumises**
 
-On va pouvoir récupérer l'id de la playlist dans les paramètres de l'URL et l'id de la track à ajouter dans le form data de la requête.
+La fonction `action` nous expose les mêmes paramètres que la fonction `loader` : `request` et` params`. On va pouvoir ainsi récupérer l'id de la playlist dans les paramètres de l'URL et l'id de la track à ajouter dans le form data de la requête.
 
 <details>
   <summary>Voir une solution</summary>
@@ -49,6 +49,10 @@ export const action = async ({ request, params: { id = "" } }: ActionArgs) => {
 Pour s'assurer que les données soumises sont valides, nous allons utiliser la librairie `zod`. Cette librairie nous permet de définir la structure d'un objet et de valider au runtime cette structure.
 
 Cela nous permet en plus de la validation d'avoir par la suite des données correctement typées.
+
+:::tip
+Voir la docs de [Zod](https://zod.dev/).
+:::
 
 <details>
   <summary>Voir une solution</summary>

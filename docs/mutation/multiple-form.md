@@ -30,7 +30,7 @@ L'ajout d'un nom et d'une valeur au bouton submit va nous permettre d'identifier
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-export default function Playlist() {
+export default function Playlists() {
   //...
   return (
     //...

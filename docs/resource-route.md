@@ -62,7 +62,7 @@ Sinon Remix traitera le lien comme une UI route et tentera de charger les donné
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 import { Link } from "@remix-run/react";
 
-export default function Playlist() {
+export default function Playlists() {
   // ...
   <Link to={`/api/playlists/${playlist.id}.json`} reloadDocument download>
     Download as JSON
