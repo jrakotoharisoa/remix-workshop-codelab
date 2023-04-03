@@ -30,8 +30,7 @@ export default function Login() {
           <p>Authentification</p>
         </div>
         <label>
-          Mot de passe:{" "}
-          <input type="password" name="password" className="border-2" />
+          Mot de passe: <input type="password" name="password" />
         </label>
 
         <button type="submit">Se connecter</button>

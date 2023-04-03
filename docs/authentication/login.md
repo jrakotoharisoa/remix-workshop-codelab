@@ -56,7 +56,7 @@ export default function Login() {
         </div>
         {/* highlight-start */}
         <label>
-          Utilisateur: <input name="username" className="border-2" />
+          Utilisateur: <input name="username" />
         </label>
         {/* highlight-end */}
         <label>
@@ -64,10 +64,7 @@ export default function Login() {
           <input
             type="password"
             name="password"
-            className={twMerge(
-              "border-2",
-              data?.errors.password && "border-rose-500"
-            )}
+            className={data?.errors.password && "border-rose-500"}
           />
         </label>
 
@@ -154,22 +151,17 @@ export default function Layout() {
   const { playlists, isLogged } = useLoaderData<typeof loader>();
 
   return (
-    <div className="grid h-full grid-cols-4 xl:grid-cols-5">
-      <aside>
-        <div className="px-8 py-6">
-          <p className="title-1 flex items-center space-x-2">
-            <MusicIcon className="h-6 w-6" />
-            <span>Remix</span>
-          </p>
-          // highlight-next-line
-          <p className="flex items-center space-x-2">
-            status: {isLogged ? "connecté" : "deconnecté"}
-          </p>
-        </div>
-        ...
-      </aside>
-      ...
-    </div>
+   //...
+      <p className="...">
+        <MusicIcon className="h-6 w-6" />
+        <span>Remix</span>
+      </p>
+      // highlight-start
+      <p >
+        status: {isLogged ? "connecté" : "deconnecté"}
+      </p>
+      // highlight-end
+  //...
   );
 }
 ```

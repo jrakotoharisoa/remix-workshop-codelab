@@ -106,14 +106,14 @@ export default function Playlists() {
   const { playlist, availableTracks } = useLoaderData<typeof loader>();
 
   return (
-    <div className="flex h-screen flex-col px-6 py-3">
-      <h1 className="title-1">{/* Nom de la playlist */}</h1>
+    <div className="...">
+      <h1>{/* Nom de la playlist */}</h1>
       <div>
         {/*...*/}
         // highlight-start
-        <ul className="flex-1 overflow-auto">
+        <ul className="flex-1">
           {availableTracks.map((track) => (
-            <li key={track.id} className="flex justify-between space-x-4">
+            <li key={track.id}>
               <span>
                 {track.name} · {track.artist}
               </span>

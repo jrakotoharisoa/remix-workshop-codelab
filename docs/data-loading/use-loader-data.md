@@ -46,8 +46,8 @@ export default function Playlists() {
   const playlist = useLoaderData<typeof loader>();
 
   return (
-    <div className="flex flex-col space-y-2 p-6">
-      <h1 className="title-1">{playlist?.name}</h1>
+    <div className="...">
+      <h1>{playlist?.name}</h1>
       <ul>
         {playlist?.tracks.map((track) => (
           <li key={track.id}>
