@@ -31,17 +31,7 @@ Si l'on accède à l'URL [http://localhost:3000/playlists/ma-premiere-playlist](
 
 💿 **Utiliser le layout**
 
-L'application existante possède un `layout` définie dans `app/routes/_layout/route.tsx`.
-
-:::note
-Remix se base sur les noms des fichiers et dossiers au premier niveau dans le dossier `app/routes` pour définir les URLs.
-
-Ainsi, ici seulement le nom du dossier `_layout` est pris en compte pour la définition de l'URL. Le `_` au début du fichier permet de ne pas créer de segment dans l'URL. Le module sera donc associé au segment `/` de l'URL.
-
-Enfin, un dossier correspondant à une route ne peut contenir qu'un seul fichier module route. Pour l'identifier, nous devons le nommer `route.tsx`.
-
-Pour info, `app/routes/_layout/route.tsx` serait équivalent à avoir un fichier `app/routes/_layout.tsx`, mais l'utilisation d'un dossier permettrait de colocaliser dans des fichiers séparés les composants pour les `header` et `footer` par exemple.
-:::
+L'application existante possède un `layout` définie dans `app/routes/_layout.tsx`.
 
 Pour inclure notre page dans ce layout, notre page doit être enfant de ce layout.
 
