@@ -23,7 +23,6 @@ De la découverte des concepts de base tels que le chargement et la soumission d
 - Gestion d'erreurs
 - Routes ressource
 - Authentification
-- Tests
 
 ## Présentation de Remix
 
