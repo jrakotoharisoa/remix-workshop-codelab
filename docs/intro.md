@@ -22,12 +22,12 @@ De la découverte des concepts de base tels que le chargement et la soumission d
 - Styles
 - Gestion d'erreurs
 - Routes ressource
-- Authentificaion
+- Authentification
 - Tests
 
 ## Présentation de Remix
 
-Remix un est framework créer par les créateurs de React-Router Ryan Florence et Michael Jackson.
+Remix un est framework créé par les créateurs de React-Router Ryan Florence et Michael Jackson.
 
 Il est souvent décrit comme un meta framework React. En effet, il se base sur React pour la partie UI, et fournit des outils permettant de répondre aux besoins courants des applications afin que les développeurs puissent se concentrer sur la création d'expériences utilisateurs de qualité.
 

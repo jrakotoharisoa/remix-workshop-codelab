@@ -38,7 +38,7 @@ export const loader = () => {
 Remix appelle notre fonction `loader` avec différent données:
 
 - une `request` objet `Request` de l'`API Fetch`
-- les `params` correspondant aux segments dynamiques de l'url
+- les `params` correspondant aux segments dynamiques de l'URL
 - un `context` remix
 
 On pourra ainsi récupérer le segment dynamique de l'URL dans `params`.

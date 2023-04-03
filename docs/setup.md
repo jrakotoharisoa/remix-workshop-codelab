@@ -52,7 +52,7 @@ my-playlists
 - **app/entry.client.tsx** : Fichier contenant le premier élément de votre JavaScript qui sera exécuté lorsque l'application se chargera dans le navigateur. C'est dans ce fichier que se passe l'hydratation de nos composants React.
 - **app/entry.server.tsx** : Fichier contenant la première partie de votre JavaScript qui s'exécutera lorsqu'une requête atteindra votre serveur. Remix s'occupe de récupérer toutes les données nécessaires et vous êtes responsable de renvoyer la réponse. C'est dans ce fichier que Remix rend notre application React côté serveur sous forme de chaîne de caractère ou de flux afin de l'envoyer comme réponse au navigateur.
 - **app/root.tsx** : Composant racine de l'application où se trouve la balise `<html>`
-- **app/routes** : Répertoire dans lequel vos routes vont être définies. Remix utilise les fichiers dans ce répertoire pour créer les urls des routes de votre application
+- **app/routes** : Répertoire dans lequel vos routes vont être définies. Remix utilise les fichiers dans ce répertoire pour créer les URLs des routes de votre application
 - **public/** : Répertoire dans lequel se retrouve les différentes ressources statiques de votre application
 - **remix.config.js** : Remix dispose d'un tas d'options de configuration que vous pouvez définir dans ce fichier
 

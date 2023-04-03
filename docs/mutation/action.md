@@ -28,7 +28,7 @@ export const action = () => {};
 
 💿 **Récupérer des données soumises**
 
-On va pouvoir récupérer l'id de la playlist dans les paramètres de l'url et l'id de la track à ajouter dans le form data de la requête.
+On va pouvoir récupérer l'id de la playlist dans les paramètres de l'URL et l'id de la track à ajouter dans le form data de la requête.
 
 <details>
   <summary>Voir une solution</summary>
