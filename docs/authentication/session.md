@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Session
 
-Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités est d'utiliser les cookies. Et pour cela Remix met à disposition un petit helper `createCookieSessionStorage`.
+Dans un monde sans JS, il est souvent nécessaire de partager l'état entre plusieurs requêtes d'un même utilisateur. Une des possibilités est d'utiliser les cookies. Et pour cela Remix met à disposition un petit helper [`createCookieSessionStorage`](https://remix.run/docs/en/1.15.0/utils/sessions#using-sessions).
 
 :::info Exercice
 Créer une session pour stocker le `username` d'un utilisateur afin de pouvoir la lire dans un `loader` après la soumission d'un formulaire
@@ -23,10 +23,9 @@ import { Form } from "@remix-run/react";
 export default function Layout() {
   return (
     <div>
-      <div>Je suis {name}</div>
       <Form method="post">
         <label>
-          Qui etes vous ?
+          Qui êtes-vous ?
           <input autoComplete="off" name="name" />
         </label>
 
@@ -40,6 +39,8 @@ export default function Layout() {
 </details>
 
 💿 ** Créer un manager de session **
+
+Utilisez pour cela [`createCookieSessionStorage`](https://remix.run/docs/en/1.15.0/utils/sessions#using-sessions).
 
 <details>
   <summary>Voir une solution</summary>
@@ -114,7 +115,7 @@ export default function Layout() {
       <div>Je suis {name}</div>
       <Form method="post">
         <label>
-          Qui etes vous ?
+          Qui êtes-vous ?
           <input autoComplete="off" name="name" />
         </label>
 
@@ -129,7 +130,7 @@ export default function Layout() {
 
 :::info 👏 Vous avez maintenant un état persisté sans JS
 
-Voyons comment utiliser cette mécanique pour gérer l'authentification.
+Voyons comment utiliser cette mécanique pour gérer l'authentification !
 :::
 
 ```
