@@ -24,8 +24,6 @@ Voir la section [Pre-fetch](https://remix.run/docs/en/1.14.3/components/link#pre
   <summary>Voir une solution</summary>
 
 ```tsx title="app/_layout.tsx"
-import { Scripts } from "@remix-run/react";
-
 export default function App() {
   return (
     // ...
