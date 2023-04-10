@@ -43,7 +43,12 @@ function Feature({ title, pictureUrl, description }: FeatureItem) {
   return (
     <div className={clsx("col avatar avatar--vertical")}>
       <img src={pictureUrl} className="avatar__photo avatar__photo--xl" />
-      <div className="text--center padding-horiz--md avatar__intro">
+      <div
+        className={clsx(
+          "text--center margin-top--md padding-horiz--md avatar__intro",
+          styles.avatar__intro
+        )}
+      >
         <h3 className="avatar__name">{title}</h3>
         <p className="avatar__subtitle">{description}</p>
       </div>
@@ -53,14 +58,61 @@ function Feature({ title, pictureUrl, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <>
+      <section className={styles.features}>
+        <div className="container">
+          <h3 className="text--center">Animé par</h3>
+          <div className="row">
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className={clsx("padding--xl", styles.comet)}>
+        <div className="container text--center">
+          <img
+            src="https://uploads-ssl.webflow.com/62e3feb2216b0574bab9036b/62e3feca21fbc2039cf47ee4_logo_comet.svg"
+            alt="comet logo"
+            className={styles.logo}
+          />
+          <h1 className="margin-vert--lg">
+            Des lieux dédiés à la réussite de vos évènements.
+          </h1>
+          <div className="row margin-vert--lg">
+            <div className="col">
+              <img
+                src="https://res.cloudinary.com/ddyhxyc8l/image/upload/w_1600,h_1067,c_fill,g_auto/v1658133621/booking/coeur-defense/cover.jpg"
+                alt="Comet La défense"
+                className={styles.cometImage}
+              />
+            </div>
+            <div className="col">
+              <img
+                src="https://res.cloudinary.com/ddyhxyc8l/image/upload/w_1600,h_1067,c_fill,g_auto/v1658133621/booking/comet-louise/1.jpg"
+                alt="Comet Louise"
+                className={styles.cometImage}
+              />
+            </div>
+            <div className="col">
+              <img
+                src="https://res.cloudinary.com/ddyhxyc8l/image/upload/w_1600,h_1067,c_fill,g_auto/v1658133621/booking/comet-retiro/cover.jpg"
+                alt="Comet Retiro"
+                className={styles.cometImage}
+              />
+            </div>
+          </div>
+
+          <a
+            className={clsx("button button--primary button--lg", styles.cta)}
+            href="https://cosmos.comet-meetings.com"
+            target="_blank"
+            rel="noopener"
+          >
+            Réserver chez Comet
+          </a>
+        </div>
+      </section>
+    </>
   );
 }

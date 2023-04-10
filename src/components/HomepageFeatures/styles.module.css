@@ -9,3 +9,30 @@
   height: 200px;
   width: 200px;
 }
+
+.avatar__intro {
+  justify-content: start;
+}
+
+.comet {
+  background-color: #f6f5f4;
+}
+
+.cta {
+  background-color: #40c0f0;
+  border-color: #40c0f0;
+  color: #05335e;
+  transition: background-color color 0.5s;
+}
+.cta:hover {
+  background-color: #034b70;
+  color: white;
+}
+
+.logo {
+  height: 70px;
+}
+
+.cometImage {
+  border-radius: 1rem;
+}
