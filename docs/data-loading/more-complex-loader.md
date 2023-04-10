@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Affichage des tracks disponibles
 
-Nous allons maintenant préparer notre page d'édition, en affichant la liste des tracks non présente dans la playlist.
+Nous allons maintenant préparer notre page d'édition, en affichant la liste des tracks non présentes dans la playlist.
 
 :::info Exercice  
 En mode `edition`, afficher sur la page de la playlist les tracks non présentes dans la playlist.
