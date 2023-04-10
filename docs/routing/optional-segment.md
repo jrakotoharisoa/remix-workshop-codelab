@@ -54,7 +54,7 @@ export default function Playlists() {
 
 💿 **Ajouter les liens pour naviguer entre le mode `edition` et le mode `lecture`**
 
-Nous allons ici utiliser le composant `<Link to={...} />` qui rendre une balise `<a />`. Ce composant nous permet de définir des liens relatifs.
+Nous allons ici utiliser le composant `<Link to={...} />` qui va rendre une balise `<a />`. Ce composant nous permet de définir des liens relatifs.
 
 :::tip
 `./` permet de définir l'url courante. Ainsi `./suffix` permet d'ajouter le segment `suffix` à l'url courante.
