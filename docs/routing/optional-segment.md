@@ -70,9 +70,7 @@ export default function Playlists() {
   const location = useLocation();
   const isEditionMode = isEditionUrl(location.pathname);
   //...
-  return (
-    {isEditionMode ? <Link to="./edit" >Edit</Link> : <Link to="./..">Done</Link>}
-  );
+  return isEditionMode ? <Link to="./edit">Edit</Link> : <Link to="./..">Done</Link>;
 }
 ```
 
