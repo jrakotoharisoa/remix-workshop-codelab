@@ -33,7 +33,7 @@ export default function Playlists() {
 </details>
 
 :::tip
-Comme le code est colocalisé, vous pouvez typer simplement la donnée dans votre composant avec `typeof loader`.
+Comme le code back et front sont colocalisés, vous pouvez typer simplement la donnée dans votre composant avec `typeof loader`.
 :::
 
 💿 **Afficher les informations**
