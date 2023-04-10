@@ -75,7 +75,7 @@ import { ActionArgs } from "@remix-run/node";
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
-  const name = formData.get("name").toString() || "";
+  const name = formData.get("name")?.toString() || "";
   const userSession = await getSession(request.headers.get("Cookie"));
   userSession.set("name", name);
   return redirect(".", {
