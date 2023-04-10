@@ -64,13 +64,21 @@ Nous allons ici utiliser le composant `<Link to={...} />` qui va rendre une bali
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
-
-
 export default function Playlists() {
   const location = useLocation();
   const isEditionMode = isEditionUrl(location.pathname);
   //...
-  return isEditionMode ? <Link to="./edit">Edit</Link> : <Link to="./..">Done</Link>;
+  return (
+    <>
+      {/*...*/}
+      {isEditionMode ? (
+        <Link to="./edit">Edit</Link>
+      ) : (
+        <Link to="./..">Done</Link>
+      )}
+      {/*...*/}
+    </>
+  );
 }
 ```
 
