@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 type FeatureItem = {
   title: string;
@@ -57,6 +58,8 @@ function Feature({ title, pictureUrl, description }: FeatureItem) {
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <>
       <section className={styles.features}>
@@ -112,6 +115,13 @@ export default function HomepageFeatures(): JSX.Element {
             Réserver chez Comet
           </a>
         </div>
+      </section>
+      <section className={clsx("text--center", styles.urlSection)}>
+        <h1>
+          👉 {siteConfig.organizationName}
+          <small>.github.io/</small>
+          {siteConfig.projectName}
+        </h1>
       </section>
     </>
   );
