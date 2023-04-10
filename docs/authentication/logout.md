@@ -20,6 +20,8 @@ Dans le cas de la d√©connexion, pas besoin de front, nous pouvons simplement cr√
   <summary>Voir une solution</summary>
 
 ```tsx title="app/routes/api.logout.ts"
+export const loader = () => { return null; }
+  
 export const action = async ({ request }: ActionArgs) => {
   const session = await getSession(request.headers.get("Cookie"));
   return redirect("/", {
