@@ -16,14 +16,26 @@
 
 .comet {
   background-color: #f6f5f4;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cta {
-  background-color: #40c0f0;
-  border-color: #40c0f0;
-  color: #05335e;
-  transition: background-color color 0.5s;
+.cometCraft div:first-child {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
+
+.cometCraftCode {
+  background-color: var(--ifm-color-gray-900);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
 .cta:hover {
   background-color: #034b70;
   color: white;
@@ -42,4 +54,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.h1 {
+  color: black;
 }

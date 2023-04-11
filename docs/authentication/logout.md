@@ -32,7 +32,7 @@ export const action = async ({ request }: ActionArgs) => {
 
 </details>
 
-:::info 👏 Vous êtes un expert Remix
+:::info 👏 Votre utilisateur peut maintenant se déconnecter
 
-Ou presque !!! Mais une chose est sûre, vous avez maintenant de bonnes bases et on a passé un super moment avec vous.
+Tu as presque fini :)
 :::

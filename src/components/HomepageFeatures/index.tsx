@@ -79,7 +79,7 @@ export default function HomepageFeatures(): JSX.Element {
             alt="comet logo"
             className={styles.logo}
           />
-          <h1 className="margin-vert--lg">
+          <h1 className={clsx("margin-vert--lg", styles.h1)}>
             Des lieux dédiés à la réussite de vos évènements.
           </h1>
           <div className="row margin-vert--lg">
@@ -105,15 +105,17 @@ export default function HomepageFeatures(): JSX.Element {
               />
             </div>
           </div>
-
-          <a
-            className={clsx("button button--primary button--lg", styles.cta)}
-            href="https://cosmos.comet-meetings.com"
-            target="_blank"
-            rel="noopener"
-          >
-            Réserver chez Comet
-          </a>
+          <div className={styles.cometCraft}>
+            <div>🎁 Tente de gagner une demi-journée chez Comet👇</div>
+            <span
+              className={clsx(
+                "padding-horiz--md padding-vert--sm",
+                styles.cometCraftCode
+              )}
+            >
+              $ npx comet-craft
+            </span>
+          </div>
         </div>
       </section>
       <section className={clsx("text--center", styles.urlSection)}>
