@@ -64,6 +64,12 @@ export default function Playlists() {
 
 </details>
 
+:::note
+Pour une page donnée, il peut arriver que vous ayez plusieurs `loader` qui soient appelées à cause de l'imbrication de vos layouts.
+
+Dans ce cas, Remix va être capable de les appeler en parallèle et éviter les appels en cascade que l'on retrouve parfois dans nos applications front-end. Cela va permettre réduire le temps de chargement de notre page.
+:::
+
 :::info 👏 Nous avons maintenant des pages avec des données dynamiques.
 
 Voyons comment mettre à jour ces données.
