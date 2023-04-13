@@ -25,3 +25,16 @@
   --ifm-color-primary-lighter: #f99a4d;
   --ifm-color-primary-lightest: #fbb177;
 }
+
+aside {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 25px bottom;
+  background-attachment: fixed;
+  background-size: 250px;
+  background-image: url("https://github.com/quantixx/template-presentation/blob/master/images/2023/Robots/png/robot_cloud1.png?raw=true");
+}
+
+.docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  min-height: 100vh;
+}
