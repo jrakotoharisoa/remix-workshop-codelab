@@ -4,10 +4,20 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 10rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("https://github.com/quantixx/template-presentation/blob/master/images/2023/Robots/png/robot_cloud1.png?raw=true");
+}
+
+.heroSubtitle {
+  max-width: 35ch;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 996px) {

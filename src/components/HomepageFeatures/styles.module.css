@@ -54,6 +54,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("https://github.com/quantixx/template-presentation/blob/master/images/2023/Robots/png/robot6.png?raw=true");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 .textBlack {
