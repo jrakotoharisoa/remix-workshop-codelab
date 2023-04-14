@@ -107,7 +107,7 @@ export const loader = async ({ params }: LoaderArgs) => {
 </details>
 
 :::tip Test
-Pour tester votre API, vous pouvez accéder à la route suivante : [http://localhost:3000/test?\_data](http://localhost:3000/test?_data)
+Pour tester votre API, vous pouvez accéder à la route suivante : [http://localhost:3000/playlists/f63a5aee-eff0-46e4-a896-98f9af15ad84?\_data](http://localhost:3000/test?_data)
 
 Le query params `_data` permet d'indiquer à Remix que l'on souhaite les données du `loader` et la page associé à la route.
 :::
