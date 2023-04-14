@@ -91,7 +91,7 @@ La sortie du `loader` doit correspondre à une réponse de l'`API Fetch`. Pour n
 <details>
   <summary>Voir une solution</summary>
 
-```tsx title="app/routes/_layout.playlists.$id.tsx"
+```tsx title="app/routes/_layout.playlists.$id.(edit).tsx"
 export const loader = async ({ params }: LoaderArgs) => {
   const id = params.id;
   const playlist = await playlists.find(id || "");
