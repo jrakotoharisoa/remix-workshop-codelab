@@ -9,7 +9,7 @@ Lorsque l'on fait des mutations, actuellement l'UI met un peu de temps à se met
 Nous allons ici utiliser la technique de l'optimistic UI pour rendre notre interface plus réactive. Cela consiste à simuler l'état optimal suite à une modification. Par exemple, pour l'ajout d'une track, cela consiste à directement faire apparaitre la track dans la playlist et à la retirer de la liste des tracks disponibles avant même la fin de la mutation côté serveur.
 
 :::info Exercice
-Ajouter de l'optimitic UI sur l'ajout et la suppression d'une track.
+Ajouter de l'optimistic UI sur l'ajout et la suppression d'une track.
 :::
 
 ## Guide
